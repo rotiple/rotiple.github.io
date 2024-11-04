@@ -206,6 +206,7 @@ body, html {
 /* 가족 이름 */
 .family-container {
     text-align: center; /* 중앙 정렬 */
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
     margin-top: 30px; /* 위쪽 간격 */
 }
 
