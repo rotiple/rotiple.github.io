@@ -167,13 +167,18 @@ body, html {
 }
 
 .names {
-    margin: 10px 0;
+    margin: 0px 0;
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
     font-size: 4.5vw;
-    font-weight: bold;
+}
+
+.names span{
+    font-size: 6vw;
 }
 
 .details {
     margin-bottom: 20px;
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
     font-size: 4vw;
     color: rgba(0, 0, 0, 0.7);
 }
@@ -181,6 +186,7 @@ body, html {
 /* 명언 */
 .wise-content {
     padding: 0;
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
     margin-top: 60px;
     line-height: 1.6;
 }
@@ -233,6 +239,20 @@ body, html {
 @font-face {
     font-family: 'Bradley Hand';
     src: url('font/bradley-hand/BradleyHandITCTT-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Hakgyoansim Badasseugi';
+    src: url('font/Hakgyoansim Badasseugi/Hakgyoansim Badasseugi OTF L.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Hakgyoansim Badasseugi B';
+    src: url('font/Hakgyoansim Badasseugi/Hakgyoansim Badasseugi OTF B.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
