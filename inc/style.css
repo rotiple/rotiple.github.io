@@ -7,7 +7,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, #6a4c93, #c08ad5, #fbc8d9);
+    background-image: url('img/ani-bg.jpg');
     overflow: hidden;
     user-select: none;
 }
@@ -43,49 +43,24 @@ body, html {
 }
 
 .text {
-    font-size: 9vw; /* 화면 크기에 따라 폰트 크기 조절 */
-    opacity: 0;
-    animation: fadeIn 2s forwards;
+    font-size: 10vw; /* 화면 크기에 따라 폰트 크기 조절 */
+    opacity: 1;
     color: rgba(0, 0, 0, 0.73); /* 연한 색상 */
 }
 
-.text#text1 {
-    animation-delay: 4s; /* 즉시 표시 */
+.text span {
+    display: inline-block; /* 각 글자가 개별적으로 애니메이션될 수 있도록 설정 */
+    opacity: 0;
+    animation: fadeIn 2s forwards; /* 각 글자에 대해 애니메이션 설정 */
 }
 
-.text#text2 img.heart-img {
-    width: 10vw; /* 이미지 크기 조절 */
-    animation: heartbeat 0.8s infinite;
-}
-
-.text#text2 {
-    display: inline-block;
-    animation-delay: 4.5s;
-}
-
-.text#text3 {
-    animation-delay: 5s; /* 하트 직후 표시 */
-}
-
-.text#text4 {
-    animation-delay: 5.5s; /* 약간의 텀 후 표시 */
-}
-
-.date {
-    position: fixed; /* 고정된 위치 */
-    font-family: "Noto Sans KR", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-weight: 600;
-    left: 50%; /* 화면의 가로 중앙 */
-    transform: translateX(-50%); /* 가로 중앙 정렬 */
-    bottom: 20px; /* 하단에서 20px 위로 위치 */
-    font-size: 4vw;
-    color: rgba(0, 0, 0, 0.45);
-    width: 80%;
-    text-align: center; /* 텍스트 가운데 정렬 */
-}
-
+.text span:nth-child(1) { animation-delay: 0s; }
+.text span:nth-child(2) { animation-delay: 0.5s; }
+.text span:nth-child(3) { animation-delay: 1s; }
+.text span:nth-child(4) { animation-delay: 1.5s; }
+.text span:nth-child(5) { animation-delay: 2s; }
+.text span:nth-child(6) { animation-delay: 2.5s; }
+.text span:nth-child(7) { animation-delay: 3s; }
 
 /* 청첩장 페이지 스타일 */
 .invitation-content {
