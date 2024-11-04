@@ -8,32 +8,101 @@
     <script src="inc/script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Jua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Sans+KR:wght@100..900&family=Single+Day&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- 비디오 추가 -->
+    <video id="introVideo" src="img/main.mp4" autoplay muted playsinline></video>
+
     <div class="animation-container" id="animationContainer">
-        <!-- 기존 애니메이션 페이지 -->
-        <!-- <div class="text" id="text1">형석</div> -->
-        <div class="text" id="text1">Wedding</div>
-        <div class="text" id="text2-all">
+        <!-- 애니메이션 페이지 -->
+        <div class="text" id="text1">형석</div>
         <div class="text" id="text2"><img src="img/heart.png" alt="하트" class="heart-img"></div>
-        <div class="text" id="text2-2"><img src="img/heart.png" alt="하트" class="heart-img"></div>
-        <div class="text" id="text2-3"><img src="img/heart.png" alt="하트" class="heart-img"></div>
-        </div>
-        <!-- <div class="text" id="text3">채린</div> -->
-        <!-- <div class="text" id="text4">결혼합니다.</div> -->
-        <div class="date">2025. 2. 16. 일요일. 오전 11시<br>더 컨벤션 반포</div>
+        <div class="text" id="text3">채린</div>
+        <div class="text" id="text4">결혼합니다.</div>
     </div>
+    <div class="date">2025. 2. 16. 일요일. 오전 11시<br>더 컨벤션 반포</div>
     
     <div class="invitation-content" id="invitationContent">
         <!-- 청첩장 페이지 -->
         <div class="date-title">2025 / 2 / 16</div>
         <div class="day-title">SUNDAY</div>
         <div class="image-container">
+            <div class="wave top">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path></defs>
+                    <g class="parallax">
+                        <use class="u-1" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(250,250,250,0.7)"></use>
+                        <use class="u-2" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(250,250,250,0.5)"></use>
+                        <use class="u-3" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(250,250,250,0.3)"></use>
+                        <use class="u-4" xlink:href="#gentle-wave" x="48" y="7" fill="rgba(250,250,250,0.2)"></use>
+                    </g>
+                </svg>
+            </div>
             <img src="img/main.jpg" alt="메인 이미지" class="main-image">
+            <div class="wave bottom">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path></defs>
+                    <g class="parallax">
+                        <use class="u-1" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(250,250,250,0.7)"></use>
+                        <use class="u-2" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(250,250,250,0.5)"></use>
+                        <use class="u-3" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(250,250,250,0.3)"></use>
+                        <use class="u-4" xlink:href="#gentle-wave" x="48" y="7" fill="rgba(250,250,250,0.2)"></use>
+                    </g>
+                </svg>
+            </div>
         </div>
-        <div class="names">장형석 · 남채린</div>
+        <div class="names">장형석&nbsp;ᰔ&nbsp;남채린</div>
         <div class="details">2025년 2월 16일 일요일 오전 11시<br>더 컨벤션 반포 2F, 그랜드볼룸</div>
+
+        <div class="wise-content">
+            <h2>초대합니다</h2>
+            <p>사랑의 시작을 알리는 특별한 날, 우리가 부부가 됩니다.</p>
+            <br>
+            <p>서로의 손을 잡고, 새로운 장을 여는 이 순간</p>
+            <p>가족과 친구들 앞에서 우리의 사랑을 다짐합니다.</p>
+            <br>
+            <p>걸어온 길과 앞으로의 꿈을</p>
+            <p>여러분과 나누고 싶습니다.</p>
+            <br>
+            <p>여러분의 따듯한 미소와 축복이 더해져</p>
+            <p>이 날이 더욱 특별해질 것입니다.</p>
+            <br>
+            <p>부디 함께해 주셔서 이 순간을 간직해 주세요.</p>
+            <br>
+            <br>
+            <div class="image-container">
+                <div class="wave top">
+                    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                        <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path></defs>
+                        <g class="parallax">
+                            <use class="u-1" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(250,250,250,0.7)"></use>
+                            <use class="u-2" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(250,250,250,0.5)"></use>
+                            <use class="u-3" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(250,250,250,0.3)"></use>
+                            <use class="u-4" xlink:href="#gentle-wave" x="48" y="7" fill="rgba(250,250,250,0.2)"></use>
+                        </g>
+                    </svg>
+                </div>
+                <img src="img/main2.jpg" alt="메인 이미지" class="main-image">
+                <div class="wave bottom">
+                    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                        <defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path></defs>
+                        <g class="parallax">
+                            <use class="u-1" xlink:href="#gentle-wave" x="48" y="0" fill="rgba(250,250,250,0.7)"></use>
+                            <use class="u-2" xlink:href="#gentle-wave" x="48" y="3" fill="rgba(250,250,250,0.5)"></use>
+                            <use class="u-3" xlink:href="#gentle-wave" x="48" y="5" fill="rgba(250,250,250,0.3)"></use>
+                            <use class="u-4" xlink:href="#gentle-wave" x="48" y="7" fill="rgba(250,250,250,0.2)"></use>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="family-container">
+            <p class="parents">장기성·김희숙<span class="connect">의 장남 </span><span class="groom">장형석</span></p>
+            <p class="parents">남광희·송귀노미<span class="connect">의 장녀 </span><span class="bride">남채린</span></p>
+           
+        </div>
+        
     </div>
 </body>
 </html>

@@ -7,91 +7,99 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, #ff9a9e, #fecfef); /* 기존 애니메이션 페이지 배경 */
+    background: linear-gradient(to bottom, #6a4c93, #c08ad5, #fbc8d9);
     overflow: hidden;
     user-select: none;
 }
 
+#introVideo {
+    width: 100vw; /* 화면 전체 너비 */
+    height: 100vh; /* 화면 전체 높이 */
+    object-fit: cover; /* 화면에 꽉 차게 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3; /* 가장 위에 위치 */
+    background-color: black; /* 비디오가 로드되지 않을 때의 배경 */
+}
+
+#introVideo.fade-out {
+    animation: fadeOut 2s forwards; /* 2초 동안 서서히 사라지기 */
+}
+
 .animation-container {
     text-align: center;
-    font-family: 'Jua', sans-serif;
-    position: relative;
+    font-family: "Single Day", cursive;
+    position: fixed; /* 고정 위치 */
+    top: 50%; /* 화면의 세로 중앙 */
+    left: 50%; /* 화면의 가로 중앙 */
+    transform: translate(-50%, -50%); /* 완벽한 중앙 정렬 */
     width: 100%;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* 세로 중앙 정렬 */
+    align-items: center; /* 가로 중앙 정렬 */
 }
 
 .text {
-    font-size: 8vw; /* 화면 크기에 따라 폰트 크기 조절 */
+    font-size: 9vw; /* 화면 크기에 따라 폰트 크기 조절 */
     opacity: 0;
-    animation: fadeIn 0s forwards; /* 텀을 줄임 */
+    animation: fadeIn 2s forwards;
     color: rgba(0, 0, 0, 0.73); /* 연한 색상 */
 }
 
 .text#text1 {
-    animation-delay: 0s; /* 즉시 표시 */
+    animation-delay: 4s; /* 즉시 표시 */
 }
 
 .text#text2 img.heart-img {
-    width: 8vw; /* 이미지 크기 조절 */
-    animation: heartbeat 1s infinite;
-}
-
-.text#text2-2 img.heart-img {
-    width: 8vw; /* 이미지 크기 조절 */
-    animation: heartbeat 1s infinite;
-}
-
-.text#text2-3 img.heart-img {
-    width: 8vw; /* 이미지 크기 조절 */
-    animation: heartbeat 1s infinite;
+    width: 10vw; /* 이미지 크기 조절 */
+    animation: heartbeat 0.8s infinite;
 }
 
 .text#text2 {
     display: inline-block;
-    animation-delay: 0.5s;
-}
-.text#text2-2 {
-    display: inline-block;
-    animation-delay: 1s;
-}
-.text#text2-3 {
-    display: inline-block;
-    animation-delay: 1.5s;
+    animation-delay: 4.5s;
 }
 
 .text#text3 {
-    animation-delay: 0.5s; /* 하트 직후 표시 */
+    animation-delay: 5s; /* 하트 직후 표시 */
 }
 
 .text#text4 {
-    animation-delay: 1s; /* 약간의 텀 후 표시 */
+    animation-delay: 5.5s; /* 약간의 텀 후 표시 */
 }
 
 .date {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    position: fixed; /* 고정된 위치 */
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 600;
+    left: 50%; /* 화면의 가로 중앙 */
+    transform: translateX(-50%); /* 가로 중앙 정렬 */
+    bottom: 20px; /* 하단에서 20px 위로 위치 */
     font-size: 4vw;
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(0, 0, 0, 0.45);
     width: 80%;
-    margin-bottom: 20px;
+    text-align: center; /* 텍스트 가운데 정렬 */
 }
+
 
 /* 청첩장 페이지 스타일 */
 .invitation-content {
     display: none;
     text-align: center;
-    font-family: 'Jua', sans-serif;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     opacity: 0;
     background-color: #ffffff; /* 흰색 배경 설정 */
     padding: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    overflow-y: auto;
     animation: fadeInContent 2s forwards;
 }
 
@@ -107,7 +115,7 @@ body, html {
     content: "";
     position: absolute;
     width: 100%;
-    height: 30px; /* 그라데이션 높이 */
+    height: 10px; /* 그라데이션 높이 */
     left: 0;
     pointer-events: none; /* 클릭 이벤트 방지 */
     z-index: 1;
@@ -129,35 +137,114 @@ body, html {
     display: block;
 }
 
-/* 글씨 스타일 */
+/* 물결 */
+.waves use.u-1 {
+    animation: waveMove1 12s linear infinite;
+}
+
+.waves use.u-2 {
+    animation: waveMove2 15s linear infinite;
+}
+
+.waves use.u-3 {
+    animation: waveMove3 18s linear infinite;
+}
+
+.waves use.u-4 {
+    animation: waveMove1 20s linear infinite;
+}
+
+.wave {
+    position: absolute;
+    width: 100%;
+    height: 100px; /* 높이를 조정 */
+    left: 0;
+    z-index: 1; /* 이미지 위에 표시되도록 */
+}
+
+.wave.top {
+    top: -60px; /* 이미지 위쪽 */
+    transform: scaleY(-1); /* 뒤집기 */
+}
+
+.wave.bottom {
+    bottom: -60px; /* 이미지 아래쪽 */
+}
+
+/* 최상단 날짜 */
 .date-title {
     font-family: "Crimson Text", serif;
     margin-top: 25px;
-    font-size: 6vw;
+    font-size: 7vw;
     font-weight: 600;
     font-style: normal;
 }
 
 .day-title {
     font-family: "Arvo", serif;
-    margin-bottom: 10px;
-    font-size: 4.5vw;
+    margin-bottom: 20px;
+    font-size: 5vw;
     color: rgba(0, 0, 0, 0.8);
     font-weight: 400;
     font-style: normal;
 }
 
 .names {
-    margin: 20px 0;
+    margin: 10px 0;
     font-size: 4.5vw;
     font-weight: bold;
 }
 
 .details {
     margin-bottom: 20px;
-    font-size: 3.5vw;
+    font-size: 4vw;
     color: rgba(0, 0, 0, 0.7);
 }
+
+/* 명언 */
+.wise-content {
+    padding: 0;
+    margin-top: 60px;
+    line-height: 1.6;
+}
+
+.wise-content h2 {
+    margin-bottom: 15px;
+    font-size: 6vw;
+    color: rgba(145, 170, 145);
+}
+
+.wise-content p {
+    margin-bottom: -20px; /* 단락 간 간격 */
+    font-size: 4vw;
+    color: rgba(88, 88, 88, 1)
+}
+
+/* 가족 이름 */
+.family-container {
+    text-align: center; /* 중앙 정렬 */
+    margin-top: 30px; /* 위쪽 간격 */
+}
+
+.parents {
+    font-size: 4.5vw;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    color: rgba(68, 68, 68, 1);
+}
+
+.connect {
+    font-size: 3vw;
+    color: rgba(119, 119, 119, 1);
+}
+
+.groom, .bride {
+    font-size: 4.5vw;
+    font-weight: bold; 
+    color: rgba(68, 68, 68, 1);
+}
+
 
 /* 애니메이션 */
 @keyframes fadeIn {
@@ -188,5 +275,50 @@ body, html {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes waveMove1 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes waveMove2 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes waveMove3 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-75%);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }
