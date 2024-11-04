@@ -1,0 +1,192 @@
+/* 기존 애니메이션 페이지 스타일 */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #ff9a9e, #fecfef); /* 기존 애니메이션 페이지 배경 */
+    overflow: hidden;
+    user-select: none;
+}
+
+.animation-container {
+    text-align: center;
+    font-family: 'Jua', sans-serif;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    font-size: 8vw; /* 화면 크기에 따라 폰트 크기 조절 */
+    opacity: 0;
+    animation: fadeIn 0s forwards; /* 텀을 줄임 */
+    color: rgba(0, 0, 0, 0.73); /* 연한 색상 */
+}
+
+.text#text1 {
+    animation-delay: 0s; /* 즉시 표시 */
+}
+
+.text#text2 img.heart-img {
+    width: 8vw; /* 이미지 크기 조절 */
+    animation: heartbeat 1s infinite;
+}
+
+.text#text2-2 img.heart-img {
+    width: 8vw; /* 이미지 크기 조절 */
+    animation: heartbeat 1s infinite;
+}
+
+.text#text2-3 img.heart-img {
+    width: 8vw; /* 이미지 크기 조절 */
+    animation: heartbeat 1s infinite;
+}
+
+.text#text2 {
+    display: inline-block;
+    animation-delay: 0.5s;
+}
+.text#text2-2 {
+    display: inline-block;
+    animation-delay: 1s;
+}
+.text#text2-3 {
+    display: inline-block;
+    animation-delay: 1.5s;
+}
+
+.text#text3 {
+    animation-delay: 0.5s; /* 하트 직후 표시 */
+}
+
+.text#text4 {
+    animation-delay: 1s; /* 약간의 텀 후 표시 */
+}
+
+.date {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 4vw;
+    color: rgba(0, 0, 0, 0.6);
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+/* 청첩장 페이지 스타일 */
+.invitation-content {
+    display: none;
+    text-align: center;
+    font-family: 'Jua', sans-serif;
+    opacity: 0;
+    background-color: #ffffff; /* 흰색 배경 설정 */
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    animation: fadeInContent 2s forwards;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    margin: 0; /* 좌우 여백 제거 */
+    overflow: hidden; /* 사진 영역을 넘지 않도록 설정 */
+}
+
+.image-container::before,
+.image-container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 30px; /* 그라데이션 높이 */
+    left: 0;
+    pointer-events: none; /* 클릭 이벤트 방지 */
+    z-index: 1;
+}
+
+.image-container::before {
+    top: 0; /* 사진 위쪽 그라데이션 */
+    background: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0));
+}
+
+.image-container::after {
+    bottom: 0; /* 사진 아래쪽 그라데이션 */
+    background: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0));
+}
+
+.main-image {
+    width: 100%; /* 좌우 여백 없이 전체 너비 */
+    height: auto;
+    display: block;
+}
+
+/* 글씨 스타일 */
+.date-title {
+    font-family: "Crimson Text", serif;
+    margin-top: 25px;
+    font-size: 6vw;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.day-title {
+    font-family: "Arvo", serif;
+    margin-bottom: 10px;
+    font-size: 4.5vw;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.names {
+    margin: 20px 0;
+    font-size: 4.5vw;
+    font-weight: bold;
+}
+
+.details {
+    margin-bottom: 20px;
+    font-size: 3.5vw;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInContent {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
