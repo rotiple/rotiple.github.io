@@ -150,15 +150,15 @@ body, html {
 
 /* 최상단 날짜 */
 .date-title {
-    font-family: "Crimson Text", serif;
+    font-family: 'Bradley Hand', sans-serif;
     margin-top: 70px;
     font-size: 7vw;
-    font-weight: 600;
+    font-weight: 400;
     font-style: normal;
 }
 
 .day-title {
-    font-family: "Arvo", serif;
+    font-family: 'Bradley Hand', sans-serif;
     margin-bottom: 20px;
     font-size: 5vw;
     color: rgba(0, 0, 0, 0.8);
@@ -225,9 +225,16 @@ body, html {
 /* Font */
 @font-face {
     font-family: 'American Captain';
-    src: url('font/American Captain Font/american-typewriter-condensed-light.ttf') format('truetype'); /* TTF 파일 경로 */
-    font-weight: normal; /* 일반체 */
-    font-style: normal; /* 일반 스타일 */
+    src: url('font/American Captain Font/american-typewriter-condensed-light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bradley Hand';
+    src: url('font/bradley-hand/BradleyHandITCTT-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* 애니메이션 */
@@ -307,14 +314,13 @@ body, html {
     }
 }
 
-/* popIn 애니메이션 정의 */
 @keyframes popIn {
     0% {
-        opacity: 0; /* 시작할 때 투명 */
-        transform: scale(0); /* 크기 0으로 시작 */
+        opacity: 0;
+        transform: scale(0);
     }
     100% {
-        opacity: 1; /* 최종 투명도 */
-        transform: scale(1); /* 최종 크기로 돌아옴 */
+        opacity: 1;
+        transform: scale(1);
     }
 }
