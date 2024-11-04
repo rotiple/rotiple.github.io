@@ -43,9 +43,11 @@ body, html {
 }
 
 .text {
-    font-size: 10vw; /* 화면 크기에 따라 폰트 크기 조절 */
+    font-family: 'American Captain', sans-serif;
+    font-weight: 700;
+    font-size: 12vw; /* 화면 크기에 따라 폰트 크기 조절 */
     opacity: 1;
-    color: rgba(0, 0, 0, 0.73); /* 연한 색상 */
+    color: rgba(0, 0, 0, 0.63); /* 연한 색상 */
 }
 
 .text span {
@@ -149,7 +151,7 @@ body, html {
 /* 최상단 날짜 */
 .date-title {
     font-family: "Crimson Text", serif;
-    margin-top: 25px;
+    margin-top: 70px;
     font-size: 7vw;
     font-weight: 600;
     font-style: normal;
@@ -220,6 +222,13 @@ body, html {
     color: rgba(68, 68, 68, 1);
 }
 
+/* Font */
+@font-face {
+    font-family: 'American Captain';
+    src: url('font/American Captain Font/american-typewriter-condensed-light.ttf') format('truetype'); /* TTF 파일 경로 */
+    font-weight: normal; /* 일반체 */
+    font-style: normal; /* 일반 스타일 */
+}
 
 /* 애니메이션 */
 @keyframes fadeIn {
