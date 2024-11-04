@@ -44,16 +44,16 @@ body, html {
 
 .text {
     font-family: 'American Captain', sans-serif;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 12vw; /* 화면 크기에 따라 폰트 크기 조절 */
     opacity: 1;
-    color: rgba(0, 0, 0, 0.63); /* 연한 색상 */
+    color: rgba(0, 0, 0, 1); /* 연한 색상 */
 }
 
 .text span {
     display: inline-block; /* 각 글자가 개별적으로 애니메이션될 수 있도록 설정 */
     opacity: 0;
-    animation: fadeIn 2s forwards; /* 각 글자에 대해 애니메이션 설정 */
+    animation: popIn 0s forwards; /* 각 글자에 대해 애니메이션 설정 */
 }
 
 .text span:nth-child(1) { animation-delay: 0s; }
@@ -304,5 +304,17 @@ body, html {
     }
     100% {
         opacity: 0;
+    }
+}
+
+/* popIn 애니메이션 정의 */
+@keyframes popIn {
+    0% {
+        opacity: 0; /* 시작할 때 투명 */
+        transform: scale(0); /* 크기 0으로 시작 */
+    }
+    100% {
+        opacity: 1; /* 최종 투명도 */
+        transform: scale(1); /* 최종 크기로 돌아옴 */
     }
 }
