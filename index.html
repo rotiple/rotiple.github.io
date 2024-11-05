@@ -133,6 +133,39 @@
                 <div class="names">
                     장형석&nbsp;<span class="heart">ᰔ</span>&nbsp;남채린 님의 결혼식이 <span class="days" id="days"></span>일 남았습니다.
                 </div>
+            </div>
+            <div class="gallery-container">
+                <div class="title">GALLERY</div>
+                <div class="gallery" id="gallery">
+                    <!-- 초기에는 일부만 보이는 이미지 -->
+                    <img src="img/gallery/1.jpg" class="gallery-item">
+                    <img src="img/gallery/2.jpg" class="gallery-item">
+                    <img src="img/gallery/3.jpg" class="gallery-item">
+                    <img src="img/gallery/4.jpg" class="gallery-item">
+                    <img src="img/gallery/5.jpg" class="gallery-item">
+                    <img src="img/gallery/1.jpg" class="gallery-item">
+                    <img src="img/gallery/2.jpg" class="gallery-item">
+                    <img src="img/gallery/3.jpg" class="gallery-item">
+                    <img src="img/gallery/4.jpg" class="gallery-item">
+                    
+                    <!-- 나중에 더 보기 버튼을 클릭하면 보여질 이미지 -->
+                    <img src="img/gallery/1.jpg" class="gallery-item hidden">
+                    <img src="img/gallery/2.jpg" class="gallery-item hidden">
+                    <img src="img/gallery/3.jpg" class="gallery-item hidden">
+                    <!-- 필요에 따라 더 추가 -->
+                </div>
+                <div class="more-button" id="moreButton">사진 더 보기</div>
+            </div>
+            
+            <div class="modal" id="modal">
+                <div class="modal-container">
+                    <img class="modal-content" id="modal-img">
+                    <div class="modal-buttons">
+                        <button class="button prev">&#10094;</button>
+                        <button class="button next">&#10095;</button>
+                        <button class="button close">&times;</button>
+                    </div>
+                </div>
             </div>            
     </div>
 </body>

@@ -1,7 +1,3 @@
-document.addEventListener('copy', (event) => {
-    event.preventDefault();
-});
-
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         document.getElementById('animationContainer').style.display = 'none';
@@ -16,10 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 날짜 차이 계산
         const timeDifference = weddingDate - today;
-        const daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+        const ddaysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
 
         // 남은 일수를 DOM에 추가
-        document.querySelector('.dday-container .days').textContent = daysLeft;
+        document.querySelector('.dday-container .days').textContent = ddaysLeft;
     }, 3500);
 });
 
@@ -258,3 +254,74 @@ let cd = new Countdown({
   outputFormat: formatCountdown
 });
 cd.start();
+
+// gallery
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+const galleryItems = document.querySelectorAll(".gallery-item");
+const moreButton = document.getElementById("moreButton");
+let currentIndex = 0;
+
+// 모달 창 열기 기능
+galleryItems.forEach((item, index) => {
+    item.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = item.src;
+        currentIndex = index;
+    });
+});
+
+// 모달 닫기 기능
+document.querySelector(".button.close").addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// 좌우 버튼 기능
+document.querySelector(".button.prev").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    modalImg.src = galleryItems[currentIndex].src;
+});
+
+document.querySelector(".button.next").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % galleryItems.length;
+    modalImg.src = galleryItems[currentIndex].src;
+});
+
+// 더보기 버튼 클릭 시 숨겨진 이미지 보이기
+moreButton.addEventListener("click", () => {
+    document.querySelectorAll(".gallery-item.hidden").forEach(item => {
+        item.classList.remove("hidden");
+    });
+    moreButton.style.display = "none"; // 더보기 버튼 숨김
+});
+
+
+document.addEventListener('copy', (event) => {
+    event.preventDefault();
+});
+
+document.addEventListener('contextmenu', (event) => {
+    event.preventDefault();
+});
+
+document.addEventListener('selectstart', (event) => {
+    event.preventDefault();
+});
+
+document.addEventListener('wheel', (event) => {
+    if (event.ctrlKey) {
+        event.preventDefault();
+    }
+}, { passive: false });
+
+document.addEventListener('keydown', (event) => {
+    if (event.ctrlKey && (event.key === '+' || event.key === '-' || event.key === '0')) {
+        event.preventDefault();
+    }
+});
+
+document.addEventListener('touchmove', (event) => {
+    if (event.scale !== 1) {
+        event.preventDefault();
+    }
+}, { passive: false });
