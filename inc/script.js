@@ -320,8 +320,30 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-document.addEventListener('touchmove', (event) => {
-    if (event.scale !== 1) {
+document.addEventListener('wheel', (event) => {
+    if (event.ctrlKey) {
         event.preventDefault();
     }
+}, { passive: false });
+
+document.addEventListener('keydown', (event) => {
+    if (event.ctrlKey && (event.key === '+' || event.key === '-' || event.key === '0')) {
+        event.preventDefault();
+    }
+});
+
+let lastTouchEnd = 0;
+
+document.addEventListener('touchstart', (event) => {
+    if (event.touches.length > 1) {
+        event.preventDefault();
+    }
+}, { passive: false });
+
+document.addEventListener('touchend', (event) => {
+    const now = (new Date()).getTime();
+    if (now - lastTouchEnd <= 300) {
+        event.preventDefault();
+    }
+    lastTouchEnd = now;
 }, { passive: false });

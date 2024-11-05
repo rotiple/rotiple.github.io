@@ -414,7 +414,7 @@ html {
     margin-top: 10vw;
     display: flex;
     justify-content: center;
-    font-family: 'American Captain Condensed', sans-serif;
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
     font-size: 6vw;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -635,7 +635,7 @@ html {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(0.3vw);
+        transform: translateY(0.8vw);
     }
 }
 
