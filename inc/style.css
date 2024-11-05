@@ -628,7 +628,7 @@ html {
 }
 
 .gallery-container .more-button::before {
-    content: '⮟';
+    content: '\25BC';
     display: inline-block;
     font-size: 4vw;
     color: rgba(145, 170, 145);
