@@ -544,6 +544,26 @@ html {
     overflow: hidden;
 }
 
+/* dday */
+.dday-container {
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
+    text-align: center;
+    color: #3b3b3b;
+}
+
+.dday-container .names {
+    font-size: 4vw;
+}
+
+.dday-container .heart {
+    font-size: 5vw;
+}
+
+.dday-container .days {
+    font-weight: bold;
+    color: #000000;
+}
+
 /* Font */
 @font-face {
     font-family: 'American Captain Condensed Light';

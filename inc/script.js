@@ -7,6 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('animationContainer').style.display = 'none';
         document.body.style.backgroundColor = '#ffffff'; // 청첩장 페이지 배경을 흰색으로 변경
         document.getElementById('invitationContent').style.display = 'block';
+
+        // 결혼식 날짜 설정 (2025년 2월 16일)
+        const weddingDate = new Date('2025-2-16');
+
+        // 오늘 날짜 가져오기
+        const today = new Date();
+
+        // 날짜 차이 계산
+        const timeDifference = weddingDate - today;
+        const daysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+        // 남은 일수를 DOM에 추가
+        document.querySelector('.dday-container .days').textContent = daysLeft;
     }, 3500);
 });
 
