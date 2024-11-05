@@ -347,3 +347,55 @@ document.addEventListener('touchend', (event) => {
     }
     lastTouchEnd = now;
 }, { passive: false });
+
+
+document.getElementById('kakao-share').addEventListener('click', function() {
+    const url = '장형석남채린결혼합니다.메인.한국';
+    alert('카카오톡 공유 기능은 실제 구현 시 카카오 API 연동이 필요합니다.');
+    // 카카오톡 공유 API 사용 시 여기에 실제 API 코드 작성
+});
+
+document.getElementById('copy-link').addEventListener('click', function() {
+    const url = '장형석남채린결혼합니다.메인.한국';
+    navigator.clipboard.writeText(url).then(() => {
+        alert('링크가 복사되었습니다.');
+    }).catch(err => {
+        alert('링크 복사에 실패했습니다.');
+        console.error(err);
+    });
+});
+
+
+
+
+function startStaticCountdown(targetDate) {
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        if (distance < 0) {
+            document.getElementById("days").textContent = "00";
+            document.getElementById("hours").textContent = "00";
+            document.getElementById("minutes").textContent = "00";
+            document.getElementById("seconds").textContent = "00";
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days.toString().padStart(2, '0');
+        document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+        document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+        document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+    }
+
+    updateCountdown(); // 첫 호출
+    setInterval(updateCountdown, 1000); // 매초 업데이트
+}
+
+// 타겟 날짜 설정 (예: 2025년 2월 16일 11:00)
+const targetDate = new Date('2025-02-16T11:00:00').getTime();
+startStaticCountdown(targetDate);

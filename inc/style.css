@@ -255,6 +255,13 @@ html {
     color: rgb(33, 33, 33)
 }
 
+.wise-content .acc {
+    font-size: 4.5vw;
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
+    font-weight: 600;
+    /* color: rgb(23, 23, 23) */
+}
+
 /* 가족 이름 */
 .family-container {
     text-align: center;
@@ -686,6 +693,59 @@ html {
     border-radius: 1vw; /* 둥근 버튼 */
 }
 
+/* Footer */
+.footer-container {
+    background-color: rgba(126, 134, 126, 0.2); /* 연한 배경 */
+    padding: 4vw;
+    text-align: center;
+    border-radius: 1vw;
+    margin-top: 3vw;
+    max-width: 100%; /* 더 넓은 영역 */
+}
+
+.share-button {
+    font-family: 'Hakgyoansim Badasseugi B', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 아이콘과 텍스트가 버튼 안에서 가운데 정렬 */
+    gap: 2vw;
+    font-size: 3vw;
+    color: rgba(145, 170, 145);
+    background-color: transparent;
+    border: none; /* 버튼의 보더 제거 */
+    outline: none; /* 포커스 보더 제거 */
+    cursor: pointer;
+    transition: color 0.3s;
+    width: 100%; /* 필요에 따라 버튼의 너비 조절 */
+}
+
+.share-buttons {
+    display: flex;
+    margin-left: -2vw;
+    flex-direction: column; /* 세로 방향으로 배치 */
+    justify-content: center;
+    align-items: center; /* 가운데 정렬 유지 */
+    gap: 1vw; /* 버튼 사이의 간격 */
+    margin-bottom: 10vw;
+}
+
+.share-button svg {
+    fill: rgba(145, 170, 145);
+}
+
+.copyright {
+    text-align: center; /* 텍스트를 가운데 정렬 */
+    font-size: 1.2vw;
+    color: rgba(145, 170, 145, 0.8); /* 연한 텍스트 */
+    margin-top: 2vw;
+    width: 100%;
+}
+
+.copyright .name {
+    font-weight: bold;
+    color: rgba(145, 170, 145); /* 조금 더 진한 텍스트 */
+}
+
 /* Font */
 @font-face {
     font-family: 'American Captain Condensed Light';
@@ -820,3 +880,42 @@ html {
         transform: scale(1);
     }
 }
+
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw; /* 항목 간의 간격 */
+    font-family: 'Hakgyoansim Badasseugi B', sans-serif, Courier, monospace;
+    margin-top: 10vw;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column; /* 세로로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+}
+
+.label {
+    font-size: 4vw;
+    color: #dd7b7b; /* 진한 분홍색 텍스트 */
+    font-weight: bold;
+    margin-bottom: 0.5vw; /* 라벨과 숫자 사이의 간격 */
+}
+
+.number {
+    font-size: 6vw;
+    color: #dd7b7b; /* 진한 분홍색 텍스트 */
+}
+
+.separator {
+    font-size: 5vw; /* 숫자와 동일한 크기로 설정 */
+    color: #f79a9a; /* 진한 분홍색 텍스트 */
+    display: flex;
+    align-items: center; /* 세로 가운데 정렬 */
+}
+
+
+
+
