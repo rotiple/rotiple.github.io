@@ -349,24 +349,6 @@ document.addEventListener('touchend', (event) => {
 }, { passive: false });
 
 
-document.getElementById('kakao-share').addEventListener('click', function() {
-    const url = '장형석남채린결혼합니다.메인.한국';
-    alert('카카오톡 공유 기능은 실제 구현 시 카카오 API 연동이 필요합니다.');
-    // 카카오톡 공유 API 사용 시 여기에 실제 API 코드 작성
-});
-
-document.getElementById('copy-link').addEventListener('click', function() {
-    const url = '장형석남채린결혼합니다.메인.한국';
-    navigator.clipboard.writeText(url).then(() => {
-        alert('링크가 복사되었습니다.');
-    }).catch(err => {
-        alert('링크 복사에 실패했습니다.');
-        console.error(err);
-    });
-});
-
-
-
 
 function startStaticCountdown(targetDate) {
     function updateCountdown() {
