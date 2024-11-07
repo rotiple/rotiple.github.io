@@ -59,7 +59,7 @@ html {
     font-family: 'American Captain Condensed Light', sans-serif;
     font-weight: 400;
     font-size: 12vw;
-    /* 화면 크기에 따라 폰트 크기 조절 */
+    white-space: pre-wrap; /* 공백과 줄바꿈 유지 */
     opacity: 1;
     color: rgba(0, 0, 0, 1);
     /* 연한 색상 */
@@ -71,41 +71,14 @@ html {
     opacity: 0;
     animation: popIn 0s forwards;
     /* 각 글자에 대해 애니메이션 설정 */
-}
-
-.text span:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.text span:nth-child(2) {
-    animation-delay: 0.5s;
-}
-
-.text span:nth-child(3) {
-    animation-delay: 1s;
-}
-
-.text span:nth-child(4) {
-    animation-delay: 1.5s;
-}
-
-.text span:nth-child(5) {
-    animation-delay: 2s;
-}
-
-.text span:nth-child(6) {
-    animation-delay: 2.5s;
-}
-
-.text span:nth-child(7) {
-    animation-delay: 3s;
+    animation-fill-mode: forwards;
 }
 
 /* 청첩장 페이지 스타일 */
 .invitation-content {
     display: none;
     text-align: center;
-    font-family: "Noto Sans KR", sans-serif;
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     opacity: 0;
@@ -118,19 +91,9 @@ html {
     animation: fadeInContent 2s forwards;
 }
 
-#invitationContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly; /* 요소 간 균등 배치 */
-    align-items: center;
-    height: 100vh; /* 화면 높이에 꽉 차게 */
-    padding: 0 0%; /* 좌우 여백 추가 */
-    box-sizing: border-box; /* 패딩 포함 크기 계산 */
-}
-
 .image-container {
     width: 100%;
-    height: 100%; /* 화면의 일정 비율 차지 */
+    height: 70%; /* 화면의 일정 비율 차지 */
     position: relative;
     overflow: hidden; /* 이미지가 넘치지 않도록 */
 }

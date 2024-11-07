@@ -1,23 +1,97 @@
 document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        document.getElementById('animationContainer').style.display = 'none';
-        document.body.style.backgroundColor = '#ffffff'; // 청첩장 페이지 배경을 흰색으로 변경
-        document.getElementById('invitationContent').style.display = 'block';
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('n') ? decodeURIComponent(params.get('n')) : null;
+    const type = params.get('t');
 
-        // 결혼식 날짜 설정 (2025년 2월 16일)
-        const weddingDate = new Date('2025-2-16');
+    let message = "WEDDING";
+    let letterSpacing = "0.3em";
+    let fontFamily = "American Captain Condensed Light, sans-serif";
+    let fontSize = "12vw"; // 기본 폰트 크기
+    let delay = 0.4;
+    const animationContainer = document.getElementById('text1');
 
-        // 오늘 날짜 가져오기
-        const today = new Date();
+    if (name && type) {
+        fontFamily = "'Hakgyoansim Badasseugi B', sans-serif";
+        letterSpacing = "0.1em";
+        delay = 0.2;
+        switch (type) {
+            case '1':
+                message = `${name} 저희 잘 살겠습니다!\n키워주셔서 감사합니다!`;
+                fontSize = "8vw";
+                break;
+            case '2':
+                message = `${name}\n나 장가간다!`;
+                fontSize = "10vw";
+                break;
+            case '3':
+                message = `${name}\n나 시집간다!`;
+                fontSize = "10vw";
+                break;
+			case '4':
+				message = `${name}\n저 장가가요!`;
+				fontSize = "10vw";
+				break;
+			case '5':
+				message = `${name}\n저 시집가요!`;
+				fontSize = "10vw";
+				break;
+            case '6':
+                message = `${name}\n저희 결혼합니다!`;
+                fontSize = "9vw";
+                break;
+            default:
+                message = "WEDDING";
+                fontFamily = "'American Captain Condensed Light', sans-serif";
+                letterSpacing = "0.2em";
+        }
+    }
 
-        // 날짜 차이 계산
-        const timeDifference = weddingDate - today;
-        const ddaysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+    animationContainer.innerHTML = "";
+    animationContainer.style.letterSpacing = letterSpacing;
+    animationContainer.style.fontFamily = fontFamily;
+    animationContainer.style.fontSize = fontSize;
 
-        // 남은 일수를 DOM에 추가
-        document.querySelector('.dday-container .days').textContent = ddaysLeft;
-    }, 3500);
+    // 인덱스를 전체 문자의 위치 기준으로 관리
+    let charIndex = 0;
+
+    message.split('\n').forEach((line, lineIndex) => {
+        [...line].forEach((char) => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            span.style.animationDelay = `${charIndex * delay}s`;
+            animationContainer.appendChild(span);
+            charIndex++; // 전체 문자 기준 인덱스 증가
+        });
+
+        // 줄바꿈 추가
+        if (lineIndex < message.split('\n').length - 1) {
+            const br = document.createElement('br');
+            animationContainer.appendChild(br);
+            charIndex++; // 줄바꿈도 딜레이에 포함
+        }
+    });
+
+    document.querySelector('.text span:last-child').addEventListener('animationend', () => {
+        setTimeout(() => {
+            document.getElementById('animationContainer').style.display = 'none';
+            document.body.style.backgroundColor = '#ffffff';
+            document.getElementById('invitationContent').style.display = 'block';
+        }, 1000);
+    });
 });
+	
+// 결혼식 날짜 설정 (2025년 2월 16일)
+const weddingDate = new Date('2025-2-16');
+
+// 오늘 날짜 가져오기
+const today = new Date();
+
+// 날짜 차이 계산
+const timeDifference = weddingDate - today;
+const ddaysLeft = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+// 남은 일수를 DOM에 추가
+document.querySelector('.dday-container .days').textContent = ddaysLeft;
 
 // == Settings ==
 const typeCountdown = 'date'; // 'time' to set the countdown to a specific time or 'date' to set the countdown to the designated date
