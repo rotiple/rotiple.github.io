@@ -118,13 +118,27 @@ html {
     animation: fadeInContent 2s forwards;
 }
 
+#invitationContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; /* 요소 간 균등 배치 */
+    align-items: center;
+    height: 100vh; /* 화면 높이에 꽉 차게 */
+    padding: 0 0%; /* 좌우 여백 추가 */
+    box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+
 .image-container {
-    position: relative;
     width: 100%;
-    margin: 0;
-    /* 좌우 여백 제거 */
-    overflow: hidden;
-    /* 사진 영역을 넘지 않도록 설정 */
+    height: 100%; /* 화면의 일정 비율 차지 */
+    position: relative;
+    overflow: hidden; /* 이미지가 넘치지 않도록 */
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 찌그러짐 최소화 */
 }
 
 .image-container::before,
@@ -150,13 +164,6 @@ html {
     bottom: 0;
     /* 사진 아래쪽 그라데이션 */
     background: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0));
-}
-
-.main-image {
-    width: 100%;
-    /* 좌우 여백 없이 전체 너비 */
-    height: auto;
-    display: block;
 }
 
 /* 물결 */
@@ -725,12 +732,14 @@ html {
     flex-direction: column; /* 세로 방향으로 배치 */
     justify-content: center;
     align-items: center; /* 가운데 정렬 유지 */
-    gap: 1vw; /* 버튼 사이의 간격 */
+    gap: 3vw; /* 버튼 사이의 간격 */
     margin-bottom: 10vw;
 }
 
 .share-button svg {
     fill: rgba(145, 170, 145);
+    width: 1.5em;
+    height: 1.5em;
 }
 
 .copyright {
@@ -915,7 +924,6 @@ html {
     display: flex;
     align-items: center; /* 세로 가운데 정렬 */
 }
-
 
 
 
