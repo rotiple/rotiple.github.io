@@ -822,6 +822,7 @@ html {
     color: rgb(33, 33, 33);
     text-align: center;
     background-color: rgba(245, 245, 245, 0.8); /* 연한 배경 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 살짝 입체감 추가 */
     border-radius: 2vw; /* 둥근 테두리 */
     position: relative; /* 타이틀의 위치를 기준으로 조정 */
     padding-top: 6vw; /* 타이틀을 위해 여백 추가 */
@@ -852,6 +853,7 @@ html {
 /* Account section styles */
 .account-section {
     background-color: rgba(245, 245, 245, 0.8); /* 둥근 네모 배경 */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 살짝 입체감 추가 */
     border-radius: 1vw;
     padding: 4vw;
     margin-bottom: 4vw;
@@ -905,6 +907,56 @@ html {
     background-color: #ddd;
     margin: 2vw 0;
 }
+
+/* Guestbook Container */
+.guestbook-container {
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
+    text-align: center;
+    margin-top: 20vw;
+    padding: 4vw;
+    background-color: rgba(245, 245, 245, 0.8); /* 연한 배경 */
+    border-radius: 2vw;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 살짝 입체감 추가 */
+}
+
+/* Title */
+.guestbook-container .title {
+    font-family: 'Hakgyoansim Badasseugi B', sans-serif;
+    font-size: 5.5vw;
+    letter-spacing: 0.5vw;
+    color: rgba(145, 170, 145);
+    margin-bottom: 4vw;
+}
+
+/* Guestbook Entries */
+.guestbook-entries {
+    min-height: 30vw; /* 방명록 내용 최소 높이 설정 */
+    border: 1px solid #ddd;
+    border-radius: 1vw;
+    background-color: #fff;
+    padding: 2vw;
+    overflow-y: auto; /* 스크롤 가능 */
+    margin-bottom: 4vw;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05); /* 내부 살짝 음영 */
+}
+
+/* Add Message Button */
+.add-message-button {
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
+    font-size: 4vw;
+    background-color: rgba(145, 170, 145, 0.1);
+    border: 0.2vw solid rgba(145, 170, 145);
+    color: rgba(145, 170, 145);
+    padding: 1vw 4vw;
+    border-radius: 3vw;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.add-message-button:hover {
+    background-color: rgba(145, 170, 145, 0.2);
+}
+
 
 /* Footer */
 .footer-container {
