@@ -299,16 +299,31 @@
         
         <div class="guestbook-container">
             <p class="title">형석이와 채린이에게<br>축하메시지를 남겨주세요!</p>
-            <script src="https://utteranc.es/client.js"
-                repo="rotiple/rotiple.github.io"
-                issue-term="pathname"
-                label="comments"
-                theme="github-light"
-                crossorigin="anonymous"
-                async>
-            </script>
+            <div class="guestbook-entries">
+                <!-- 방명록 메시지들이 들어갈 공간 -->
+            </div>
             <button class="add-message-button">축하글 남기기</button>
-        </div>        
+        </div>
+        <!-- Guestbook Modal -->
+        <div id="guestbook-modal" class="modal guestbook-modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>축하 메시지 남기기</h2>
+                <form id="guestbook-form">
+                    <label for="name">이름:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="password">비밀번호:</label>
+                    <input type="password" id="password" name="password" required>
+
+                    <label for="message">내용:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit" class="submit-button">메시지 남기기</button>
+                </form>
+            </div>
+        </div>
+
             
         <div class="footer-container">
             <div id="toast"></div>
@@ -331,4 +346,24 @@
         </div>
     </div>
 </body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getFirestore } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyAmL6UFOg1Ne_LPepPlJAW_9a6kktjI4v0",
+        authDomain: "wedding-comments-bafe4.firebaseapp.com",
+        projectId: "wedding-comments-bafe4",
+        storageBucket: "wedding-comments-bafe4.firebasestorage.app",
+        messagingSenderId: "257449109138",
+        appId: "1:257449109138:web:231ceda7f2aeaa4929284b"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    window.db = getFirestore(app); // Firestore를 전역으로 설정
+</script>
 </html>

@@ -777,14 +777,14 @@ html {
 
 /* Guestbook Entries */
 .guestbook-entries {
-    min-height: 30vw; /* 방명록 내용 최소 높이 설정 */
+    min-height: 30vw;
     border: 1px solid #ddd;
     border-radius: 1vw;
     background-color: #fff;
     padding: 2vw;
-    overflow-y: auto; /* 스크롤 가능 */
+    overflow-y: auto;
     margin-bottom: 4vw;
-    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05); /* 내부 살짝 음영 */
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05);
 }
 
 /* Add Message Button */
@@ -804,6 +804,89 @@ html {
     background-color: rgba(145, 170, 145, 0.2);
 }
 
+/* Modal */
+.modal {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 반투명 배경 */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
+}
+
+/* Modal Title */
+.modal-content h2 {
+    margin-bottom: 15px;
+    font-family: 'Hakgyoansim Badasseugi B', sans-serif;
+    font-size: 5vw;
+    color: rgba(77, 77, 77, 0.9);
+}
+
+/* Form Labels */
+.modal-content label {
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
+    font-size: 4vw;
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+    color: rgba(77, 77, 77, 0.9);
+}
+
+/* Form Inputs */
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 4vw;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Submit Button */
+.submit-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: rgba(145, 170, 145, 0.8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
+    font-size: 4vw;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: rgba(145, 170, 145, 1);
+}
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 3vw;
+    color: #333;
+    cursor: pointer;
+}
 
 /* Footer */
 .footer-container {

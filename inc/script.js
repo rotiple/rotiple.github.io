@@ -319,3 +319,67 @@ function startStaticCountdown(targetDate) {
 // 타겟 날짜 설정 (예: 2025년 2월 16일 11:00)
 const targetDate = new Date('2025-02-16T11:00:00').getTime();
 startStaticCountdown(targetDate);
+
+// 방명록
+async function hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password);
+    const hash = await crypto.subtle.digest('SHA-256', data);
+    return Array.from(new Uint8Array(hash))
+        .map(byte => byte.toString(16).padStart(2, '0'))
+        .join('');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const db = firebase.firestore(); // Firestore 초기화
+    const modal = document.getElementById('guestbook-modal');
+    const guestbookForm = document.getElementById('guestbook-form');
+    const closeButton = document.querySelector('.close-button');
+    const addMessageButton = document.querySelector('.add-message-button');
+
+    // 모달 열기
+    addMessageButton.addEventListener('click', () => {
+        modal.style.display = 'flex';
+    });
+
+    // 모달 닫기
+    closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // 폼 제출 처리
+    guestbookForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const password = document.getElementById('password').value;
+        const message = document.getElementById('message').value;
+
+        try {
+            const hashedPassword = await hashPassword(password);
+
+            // Firestore에 데이터 저장
+            await db.collection('guestbook').add({
+                name: name,
+                password: hashedPassword,
+                message: message,
+                date: firebase.firestore.Timestamp.fromDate(new Date())
+            });
+
+            alert('메시지가 저장되었습니다!');
+            guestbookForm.reset(); // 폼 초기화
+            modal.style.display = 'none'; // 모달 닫기
+        } catch (error) {
+            console.error('Error saving message: ', error);
+            alert('메시지 저장 중 오류가 발생했습니다.');
+        }
+    });
+});
+
+
