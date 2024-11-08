@@ -475,16 +475,20 @@ function showToast(message) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const copyButton = document.getElementById('copy-link');
+    // 'copy-link'와 'copy-address-button' 모두 선택
+    const copyButtons = document.querySelectorAll('#copy-link, .copy-address-button');
 
-    copyButton.addEventListener('click', () => {
-        const textToCopy = copyButton.getAttribute('data-clipboard-text');
-        console.log(textToCopy);
-        navigator.clipboard.writeText(textToCopy).then(() => {
-            showToast('복사되었습니다!!');
-        }).catch(err => {
-            fallbackCopyTextToClipboard(textToCopy);
-            showToast('복사되었습니다!!');
+    copyButtons.forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const textToCopy = copyButton.getAttribute('data-clipboard-text');
+            if (textToCopy) {
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    showToast('복사되었습니다!!');
+                }).catch(err => {
+                    fallbackCopyTextToClipboard(textToCopy);
+                    showToast('복사되었습니다!!');
+                });
+            }
         });
     });
 
