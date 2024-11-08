@@ -528,10 +528,9 @@ html {
 .swiper-button-next,
 .swiper-button-prev {
     color: white !important; /* 버튼 색상 흰색으로 변경 */
-    font-size: 2rem; /* 버튼 크기 확대 */
     position: absolute;
     top: 50%; /* 세로 중앙 */
-    transform: translateY(-50%);
+    transform: translateY(-50%) scale(0.7);
     z-index: 10;
     opacity: 0.8;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 기본 텍스트 그림자 */
