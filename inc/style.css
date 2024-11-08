@@ -1190,21 +1190,27 @@ html {
 }
 
 .label {
-    font-size: 4vw;
-    color: #fc6680; /* 진한 분홍색 텍스트 */
+    font-size: 3vw;
+    color: #7791a8;
+    text-shadow: 0.05em 0.05em 0.1em rgba(136, 110, 87, 0.3);
     font-weight: bold;
     margin-bottom: 0.5vw; /* 라벨과 숫자 사이의 간격 */
 }
 
 .number {
     font-size: 6vw;
-    color: #fc6680; /* 진한 분홍색 텍스트 */
+    font-weight: 900;
+    line-height: 1.5em;
+    border-radius: 0.25em;
+    color: #4c6377;
+    /* border-bottom: 0.01em solid rgba(76, 99, 119, 0.1); */
+    box-shadow: 0 0.2em 0.3em -0.1em rgba(76, 99, 119, 0.1);
 }
 
 .separator {
     font-size: 5vw; /* 숫자와 동일한 크기로 설정 */
-    color: #fc6680; /* 진한 분홍색 텍스트 */
-    display: flex;
+    font-weight: 900;
+    color: #4c6377;
     align-items: center; /* 세로 가운데 정렬 */
 }
 
