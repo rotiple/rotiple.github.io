@@ -887,7 +887,7 @@ html {
     align-items: center;
     justify-content: center; /* 아이콘과 텍스트가 버튼 안에서 가운데 정렬 */
     gap: 2vw;
-    font-size: 3vw;
+    font-size: 4vw;
     color: rgba(145, 170, 145);
     background-color: transparent;
     border: none; /* 버튼의 보더 제거 */

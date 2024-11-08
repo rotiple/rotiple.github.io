@@ -476,7 +476,7 @@ function showToast(message) {
 
 document.addEventListener('DOMContentLoaded', () => {
     // 'copy-link'와 'copy-address-button' 모두 선택
-    const copyButtons = document.querySelectorAll('#copy-link, .copy-address-button');
+    const copyButtons = document.querySelectorAll('.copy-account-button, #copy-link, .copy-address-button');
 
     copyButtons.forEach(copyButton => {
         copyButton.addEventListener('click', () => {
