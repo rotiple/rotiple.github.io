@@ -1179,7 +1179,7 @@ html {
     justify-content: center;
     align-items: center;
     gap: 3vw; /* 항목 간의 간격 */
-    font-family: 'Hakgyoansim Badasseugi B', sans-serif, Courier, monospace;
+    font-family: 'Hakgyoansim Badasseugi', sans-serif, Courier, monospace;
     margin-top: 10vw;
 }
 
@@ -1191,19 +1191,19 @@ html {
 
 .label {
     font-size: 4vw;
-    color: #dd7b7b; /* 진한 분홍색 텍스트 */
+    color: #fc6680; /* 진한 분홍색 텍스트 */
     font-weight: bold;
     margin-bottom: 0.5vw; /* 라벨과 숫자 사이의 간격 */
 }
 
 .number {
     font-size: 6vw;
-    color: #dd7b7b; /* 진한 분홍색 텍스트 */
+    color: #fc6680; /* 진한 분홍색 텍스트 */
 }
 
 .separator {
     font-size: 5vw; /* 숫자와 동일한 크기로 설정 */
-    color: #f79a9a; /* 진한 분홍색 텍스트 */
+    color: #fc6680; /* 진한 분홍색 텍스트 */
     display: flex;
     align-items: center; /* 세로 가운데 정렬 */
 }
