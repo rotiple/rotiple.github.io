@@ -171,7 +171,7 @@ html {
 /* 최상단 날짜 */
 .date-title {
     font-family: 'Bradley Hand', sans-serif;
-    margin-top: 70px;
+    margin-top: 20vw;
     font-size: 7vw;
     font-weight: 400;
     font-style: normal;
@@ -197,7 +197,6 @@ html {
 }
 
 .details {
-    margin-bottom: 20px;
     font-family: 'Hakgyoansim Badasseugi', sans-serif;
     font-size: 4vw;
     color: rgba(0, 0, 0, 0.7);
@@ -207,12 +206,12 @@ html {
 .wise-content {
     padding: 0;
     font-family: 'Hakgyoansim Badasseugi', sans-serif;
-    margin-top: 20vw;
+    margin-top: 30vw;
     line-height: 1.6;
 }
 
 .wise-content h2 {
-    margin-bottom: 15px;
+    margin-bottom: 4vw;
     font-size: 6vw;
     letter-spacing: 0.7vw;
     color: rgba(145, 170, 145);
@@ -266,7 +265,7 @@ html {
     font-family: 'Hakgyoansim Badasseugi', sans-serif;
     text-align: center;
     /* 중앙 정렬 */
-    margin-top: 20vw;
+    margin-top: 30vw;
     /* 위쪽 간격 */
 }
 
@@ -547,12 +546,13 @@ html {
 /* gallery */
 .gallery-container {
     font-family: 'American Captain Condensed', sans-serif;
-    margin-top: 20vw;
+    margin-top: 30vw;
     margin-left: 2vw;
     margin-right: 2vw;
 }
 
 .gallery-container .title {
+    margin-bottom: 5vw;
     font-size: 6vw;
     letter-spacing: 0.7vw;
     color: rgba(145, 170, 145);
@@ -698,6 +698,104 @@ html {
 /* 페이지네이션 위치 조정 */
 .swiper-pagination {
     bottom: 10vh !important;
+}
+
+/* LOCATION */
+.location-container {
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
+    text-align: center;
+    /* 중앙 정렬 */
+    margin-top: 40vw;
+    /* 위쪽 간격 */
+}
+
+/* LOCATION 타이틀 */
+.location-container .title {
+    font-family: 'American Captain Condensed', sans-serif; /* calendar-container title과 동일 */
+    margin-top: 0px;
+    margin-bottom: 4vw;
+    font-size: 6vw; /* 크기 조정 */
+    letter-spacing: 0.7vw;
+    color: rgba(145, 170, 145);
+    text-align: center; /* 중앙 정렬 */
+}
+
+/* LOCATION 전체 내용 스타일 */
+.location-container .address,
+.location-container .content {
+    font-size: 4vw;
+    line-height: 1.6;
+    color: rgb(33, 33, 33);
+    text-align: center; /* 내용 중앙 정렬 */
+    margin-bottom: 2vw;
+}
+
+/* section-title 스타일 */
+.location-container .section-title {
+    font-family: 'Hakgyoansim Badasseugi B', sans-serif; /* wise-content와 같은 폰트 */
+    font-size: 5vw; /* wise-content보다 크기 더 큼 */
+    color: rgba(77, 77, 77, 0.9); /* 색상 약간 어둡게 */
+    text-align: center;
+    margin-top: 2vw;
+    margin-bottom: 1vw;
+}
+
+/* 주소 복사 버튼 스타일 */
+.location-container .copy-address-button {
+    font-size: 4vw;
+    background-color: rgba(145, 170, 145, 0.1);
+    border: 0.2vw solid rgba(145, 170, 145);
+    color: rgba(145, 170, 145);
+    padding: 1vw 3vw;
+    border-radius: 3vw;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: block;
+    margin: 2vw auto; /* 가운데 정렬 */
+}
+
+.location-container .copy-address-button:hover {
+    background-color: rgba(145, 170, 145, 0.2);
+}
+
+/* 지도 컨테이너 스타일 */
+.map-container {
+    width: 100%;
+    height: 40vw; /* 지도의 높이를 화면 너비에 비례하도록 설정 */
+    margin: 2vw 0;
+    border-radius: 1vw; /* 테두리 둥글게 */
+    overflow: hidden; /* 지도 내용이 넘치지 않도록 */
+}
+
+/* 어플 실행 버튼 스타일 */
+.location-container .app-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 3vw; /* 버튼 사이 간격 */
+    margin-bottom: 2vw;
+}
+
+.location-container .app-button {
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
+    font-size: 3.5vw;
+    padding: 1vw 3vw;
+    background-color: rgba(145, 170, 145, 0.1);
+    border: 0.2vw solid rgba(145, 170, 145);
+    color: rgba(145, 170, 145);
+    border-radius: 2vw;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.location-container .app-button:hover {
+    background-color: rgba(145, 170, 145, 0.2);
+}
+
+/* 구분선 스타일 */
+.separator {
+    height: 1px;
+    background-color: #ddd; /* 연한 회색 */
+    margin: 2vw 0;
 }
 
 /* Footer */

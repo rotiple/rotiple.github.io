@@ -151,63 +151,119 @@
                     장형석&nbsp;<span class="heart">ᰔ</span>&nbsp;남채린 님의 결혼식이 <span class="days" id="days"></span>일 남았습니다.
                 </div>
             </div>
-            <div class="gallery-container">
-                <div class="title">GALLERY</div>
-                <div class="gallery" id="gallery">
-                    <!-- 초기에는 일부만 보이는 이미지 -->
-                    <img src="img/gallery/1.webp" class="gallery-item">
-                    <img src="img/gallery/2.webp" class="gallery-item">
-                    <img src="img/gallery/3.webp" class="gallery-item">
-                    <img src="img/gallery/4.webp" class="gallery-item">
-                    <img src="img/gallery/5.webp" class="gallery-item">
-                    <img src="img/gallery/1.webp" class="gallery-item">
-                    <img src="img/gallery/2.webp" class="gallery-item">
-                    <img src="img/gallery/3.webp" class="gallery-item">
-                    <img src="img/gallery/4.webp" class="gallery-item">
-                    
-                    <!-- 나중에 더 보기 버튼을 클릭하면 보여질 이미지 -->
-                    <img src="img/gallery/1.webp" class="gallery-item hidden">
-                    <img src="img/gallery/2.webp" class="gallery-item hidden">
-                    <img src="img/gallery/3.webp" class="gallery-item hidden">
-                    <!-- 필요에 따라 더 추가 -->
-                </div>
-                <div class="more-button" id="moreButton">사진 더 보기</div>
+        </div>
+        <div class="gallery-container">
+            <div class="title">GALLERY</div>
+            <div class="gallery" id="gallery">
+                <!-- 초기에는 일부만 보이는 이미지 -->
+                <img src="img/gallery/1.webp" class="gallery-item">
+                <img src="img/gallery/2.webp" class="gallery-item">
+                <img src="img/gallery/3.webp" class="gallery-item">
+                <img src="img/gallery/4.webp" class="gallery-item">
+                <img src="img/gallery/5.webp" class="gallery-item">
+                <img src="img/gallery/1.webp" class="gallery-item">
+                <img src="img/gallery/2.webp" class="gallery-item">
+                <img src="img/gallery/3.webp" class="gallery-item">
+                <img src="img/gallery/4.webp" class="gallery-item">
+                
+                <!-- 나중에 더 보기 버튼을 클릭하면 보여질 이미지 -->
+                <img src="img/gallery/1.webp" class="gallery-item hidden">
+                <img src="img/gallery/2.webp" class="gallery-item hidden">
+                <img src="img/gallery/3.webp" class="gallery-item hidden">
+                <!-- 필요에 따라 더 추가 -->
             </div>
+            <div class="more-button" id="moreButton">사진 더 보기</div>
+        </div>
             
-            <!-- Swiper Modal -->
-            <div id="swiperModal" class="swiper-modal">
-                <div class="swiper">
-                    <div class="swiper-wrapper">
-                        <!-- 슬라이드 이미지가 동적으로 추가됩니다 -->
-                    </div>
-                    <!-- 내비게이션 버튼 -->
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <!-- 페이지네이션 -->
-                    <div class="swiper-pagination"></div>
+        <!-- Swiper Modal -->
+        <div id="swiperModal" class="swiper-modal">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <!-- 슬라이드 이미지가 동적으로 추가됩니다 -->
                 </div>
-                <button class="close-swiper-modal">X</button>
+                <!-- 내비게이션 버튼 -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- 페이지네이션 -->
+                <div class="swiper-pagination"></div>
             </div>
+            <button class="close-swiper-modal">X</button>
+        </div>
+
+        <div class="location-container">
+            <p class="title">LOCATION</p>
+            <p class="address">
+                서울 서초구 사평대로 108<br>
+                더 컨벤션 반포 그랜드볼룸 2층
+            </p>
+            <button class="copy-address-button">주소 복사</button>
+        
+            <!-- 네이버 지도 API 삽입 영역 -->
+            <div id="map" class="map-container"></div>
+        
+            <!-- 어플 실행 버튼들 -->
+            <div class="app-buttons">
+                <button class="app-button naver-map">네이버지도</button>
+                <button class="app-button kakao-navi">카카오내비</button>
+                <button class="app-button tmap">티맵</button>
+            </div>
+        
+            <!-- 무료 셔틀 -->
+            <div class="shuttle-info">
+                <div class="separator"></div>
+                <p class="section-title">무료 셔틀</p>
+                <p class="content">내용</p>
+            </div>
+        
+            <!-- 지하철 안내 -->
+            <div class="subway-info">
+                <div class="separator"></div>
+                <p class="section-title">지하철</p>
+                <p class="content">내용</p>
+            </div>
+        
+            <!-- 버스 안내 -->
+            <div class="bus-info">
+                <div class="separator"></div>
+                <p class="section-title">버스</p>
+                <p class="content">내용</p>
+            </div>
+        
+            <!-- 자가용 안내 -->
+            <div class="car-info">
+                <div class="separator"></div>
+                <p class="section-title">자가용</p>
+                <p class="content">내용</p>
+            </div>
+        
+            <!-- 주차 안내 -->
+            <div class="parking-info">
+                <div class="separator"></div>
+                <p class="section-title">주차안내</p>
+                <p class="content">내용</p>
+            </div>
+        </div>
             
-            <div class="footer-container">
-                <div id="toast"></div>
-                <div class="share-buttons">
-                    <button class="share-button" id="copy-link" data-clipboard-text="https://장형석남채린결혼합니다.메인.한국">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" height="24" width="24">
-                            <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
-                        </svg>
-                        링크 주소 복사하기
-                    </button>
-                    <button class="share-button" id="kakao-share">
-                        <svg id="Bold" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                            <path d="m9.462 9.306-.692 1.951h1.383z"></path>
-                            <path d="m12 1c-6.627 0-12 4.208-12 9.399 0 3.356 2.246 6.301 5.625 7.963-1.299 4.45-1.333 4.47-1.113 4.599.276.161.634-.005 5.357-3.311.692.097 1.404.148 2.131.148 6.627 0 12-4.208 12-9.399s-5.373-9.399-12-9.399zm-5.942 12.023c0 .362-.311.657-.692.657s-.692-.295-.692-.657v-4.086h-1.08c-.375 0-.679-.302-.679-.673s.303-.674.678-.674h3.545c.375 0 .679.302.679.673s-.305.674-.679.674h-1.08zm5.378.648c-.72 0-.587-.565-.919-1.195h-2.111c-.329.625-.2 1.195-.919 1.195-.693.001-.815-.421-.604-1.071l1.656-4.33c.117-.33.471-.669.922-.679.452.01.807.349.923.679 1.093 3.39 2.654 5.402 1.052 5.401zm3.939-.092h-2.221c-1.159 0-.454-1.565-.663-5.301 0-.379.317-.688.707-.688s.707.308.707.688v4.04h1.471c.366 0 .663.283.663.63-.001.348-.298.631-.664.631zm5.419-.518c-.025.181-.122.344-.269.454-.955.721-1.661-1.381-2.593-2.271l-.24.239v1.5c0 .38-.31.688-.693.688-.382 0-.692-.308-.692-.688v-4.705c0-.379.31-.688.692-.688s.692.308.692.688v1.478c1.277-.958 1.985-2.67 2.792-1.869.792.786-.848 1.474-1.527 2.422 1.604 2.212 1.909 2.267 1.838 2.752z"></path>
-                        </svg>
-                        카카오톡 공유하기
-                    </button>
-                </div>
-                <div class="copyright">Copyright 2024, <span class="name">형석 그리고 채린</span>. All rights reserved.</div>
+            
+        <div class="footer-container">
+            <div id="toast"></div>
+            <div class="share-buttons">
+                <button class="share-button" id="copy-link" data-clipboard-text="https://장형석남채린결혼합니다.메인.한국">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" height="24" width="24">
+                        <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
+                    </svg>
+                    링크 주소 복사하기
+                </button>
+                <button class="share-button" id="kakao-share">
+                    <svg id="Bold" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                        <path d="m9.462 9.306-.692 1.951h1.383z"></path>
+                        <path d="m12 1c-6.627 0-12 4.208-12 9.399 0 3.356 2.246 6.301 5.625 7.963-1.299 4.45-1.333 4.47-1.113 4.599.276.161.634-.005 5.357-3.311.692.097 1.404.148 2.131.148 6.627 0 12-4.208 12-9.399s-5.373-9.399-12-9.399zm-5.942 12.023c0 .362-.311.657-.692.657s-.692-.295-.692-.657v-4.086h-1.08c-.375 0-.679-.302-.679-.673s.303-.674.678-.674h3.545c.375 0 .679.302.679.673s-.305.674-.679.674h-1.08zm5.378.648c-.72 0-.587-.565-.919-1.195h-2.111c-.329.625-.2 1.195-.919 1.195-.693.001-.815-.421-.604-1.071l1.656-4.33c.117-.33.471-.669.922-.679.452.01.807.349.923.679 1.093 3.39 2.654 5.402 1.052 5.401zm3.939-.092h-2.221c-1.159 0-.454-1.565-.663-5.301 0-.379.317-.688.707-.688s.707.308.707.688v4.04h1.471c.366 0 .663.283.663.63-.001.348-.298.631-.664.631zm5.419-.518c-.025.181-.122.344-.269.454-.955.721-1.661-1.381-2.593-2.271l-.24.239v1.5c0 .38-.31.688-.693.688-.382 0-.692-.308-.692-.688v-4.705c0-.379.31-.688.692-.688s.692.308.692.688v1.478c1.277-.958 1.985-2.67 2.792-1.869.792.786-.848 1.474-1.527 2.422 1.604 2.212 1.909 2.267 1.838 2.752z"></path>
+                    </svg>
+                    카카오톡 공유하기
+                </button>
             </div>
+            <div class="copyright">Copyright 2024, <span class="name">형석 그리고 채린</span>. All rights reserved.</div>
+        </div>
     </div>
 </body>
 </html>
