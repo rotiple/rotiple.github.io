@@ -517,7 +517,7 @@ html {
     background: transparent;
     color: white;
     text-shadow: 0 0 5px #555;
-    font-size: 8vw;
+    font-size: 5vw;
     border: none;
     cursor: pointer;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 기본 텍스트 그림자 */
@@ -595,6 +595,7 @@ html {
     padding: 1vw 3vw;
     border-radius: 3vw;
     cursor: pointer;
+    width: 50vw;
     transition: background-color 0.3s, color 0.3s;
     display: block;
     margin: 2vw auto; /* 가운데 정렬 */
