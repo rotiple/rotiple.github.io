@@ -718,6 +718,31 @@ html {
     color: rgba(145, 170, 145); /* 조금 더 진한 텍스트 */
 }
 
+/* toast */
+#toast {
+    visibility: hidden; /* 기본적으로 숨김 */
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    font-size: 17px;
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+
+#toast.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+
 /* Font */
 @font-face {
     font-family: 'American Captain Condensed Light';

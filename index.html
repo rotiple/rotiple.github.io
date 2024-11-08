@@ -6,6 +6,8 @@
     <title>결혼식 초대</title>
     <link rel="stylesheet" href="inc/style.css">
     <script src="inc/script.js" defer></script>
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.3/kakao.min.js" integrity="sha384-kLbo2SvoNtOFiniJ1EQ9o2iDA8i3xp+O6Cns+L5cd4RsOJfl+43z5pvieT2ayq3C" crossorigin="anonymous"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Sans+KR:wght@100..900&family=Single+Day&display=swap" rel="stylesheet">
@@ -13,13 +15,6 @@
 <body>
     <div class="animation-container" id="animationContainer">
         <div class="text" id="text1">
-            <span class="w">W</span>
-            <span class="e">E</span>
-            <span class="d">D</span>
-            <span class="d2">D</span>
-            <span class="i">I</span>
-            <span class="n">N</span>
-            <span class="g">G</span>
         </div>
     </div>
     
@@ -190,8 +185,9 @@
             </div>
             
             <div class="footer-container">
+                <div id="toast"></div>
                 <div class="share-buttons">
-                    <button class="share-button" id="copy-link">
+                    <button class="share-button" id="copy-link" data-clipboard-text="https://장형석남채린결혼합니다.메인.한국">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" height="24" width="24">
                             <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
                         </svg>

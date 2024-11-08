@@ -422,7 +422,61 @@ document.addEventListener('touchend', (event) => {
     lastTouchEnd = now;
 }, { passive: false });
 
+// 공유
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message; // 메시지 설정
+    toast.className = 'show'; // Toast 표시
+    setTimeout(() => {
+        toast.className = toast.className.replace('show', ''); // 일정 시간 후 숨김
+    }, 3000); // 3초 후 제거
+}
 
+document.addEventListener('DOMContentLoaded', () => {
+    const copyButton = document.getElementById('copy-link');
+
+    copyButton.addEventListener('click', () => {
+        const textToCopy = copyButton.getAttribute('data-clipboard-text');
+        console.log(textToCopy);
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            showToast('복사되었습니다!');
+        }).catch(err => {
+            fallbackCopyTextToClipboard(textToCopy);
+            showToast('복사되었습니다!');
+        });
+    });
+
+    function fallbackCopyTextToClipboard(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.top = '0';
+        textArea.style.left = '0';
+        textArea.style.width = '2em';
+        textArea.style.height = '2em';
+        textArea.style.padding = '0';
+        textArea.style.border = 'none';
+        textArea.style.outline = 'none';
+        textArea.style.boxShadow = 'none';
+        textArea.style.background = 'transparent';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+            document.execCommand('copy');
+        } catch (err) {
+            console.error('Fallback: Oops, unable to copy', err);
+        }
+        document.body.removeChild(textArea);
+    }
+});
+
+Kakao.init('b693b30df0a49a177c175e119c6efd59');
+document.getElementById('kakao-share').addEventListener('click', () => {
+    Kakao.Share.sendCustom({
+        templateId: 114037
+    });
+});
 
 function startStaticCountdown(targetDate) {
     function updateCountdown() {
