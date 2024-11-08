@@ -776,16 +776,83 @@ html {
 }
 
 /* Guestbook Entries */
-.guestbook-entries {
-    min-height: 30vw;
-    border: 1px solid #ddd;
-    border-radius: 1vw;
-    background-color: #fff;
+/* 방명록 항목 스타일 */
+.guestbook-entry {
+    background-color: #f9f9f9; /* 더 연한 배경색 */
+    margin-bottom: 2vw;
     padding: 2vw;
-    overflow-y: auto;
-    margin-bottom: 4vw;
-    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 1vw;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* 더 약한 그림자 */
 }
+
+/* 항목 제목 (수정 버튼 추가용) */
+.guestbook-entry .entry-header {
+    font-weight: bold;
+    font-size: 4vw;
+    color: #474747; /* 더 연한 텍스트 색상 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1vw;
+    padding-bottom: 1vw;
+    border-bottom: 1px solid #ddd; /* 이름 아래 선 */
+}
+
+/* 항목 메시지 */
+.guestbook-entry .entry-message {
+    font-size: 4.5vw;
+    color: #4c4c4c; /* 연한 텍스트 색상 */
+    line-height: 1.6;
+    margin-bottom: 1vw;
+}
+
+/* 수정 및 삭제 버튼 */
+.guestbook-entry .entry-buttons {
+    display: flex;
+    justify-content: flex-end; /* 버튼을 오른쪽 정렬 */
+    gap: 1vw;
+}
+
+.guestbook-entry .entry-buttons button {
+    font-size: 2.5vw;
+    padding: 0.5vw 2vw;
+    border: 0.1vw solid rgba(208, 230, 208, 0.5); /* 더 연한 테두리 */
+    border-radius: 2vw;
+    background-color: rgba(198, 224, 198, 0.05); /* 더 연한 배경 */
+    color: rgba(162, 187, 162, 0.8);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.guestbook-entry .entry-buttons button:hover {
+    background-color: rgba(145, 170, 145, 0.1); /* hover 시 조금 더 강조 */
+}
+
+/* 모달 입력 스타일 */
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 1.5vw;
+    margin-top: 1vw;
+    font-size: 3.5vw;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 모달 버튼 */
+.modal-content .submit-button {
+    font-size: 4vw;
+    background-color: rgba(145, 170, 145, 0.8);
+    border-radius: 5px;
+    margin-top: 1vw;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content .submit-button:hover {
+    background-color: rgba(145, 170, 145, 1);
+}
+
 
 /* Add Message Button */
 .add-message-button {
@@ -798,6 +865,8 @@ html {
     border-radius: 3vw;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 5vw;
+    width: 70vw;
 }
 
 .add-message-button:hover {

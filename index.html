@@ -299,10 +299,10 @@
         
         <div class="guestbook-container">
             <p class="title">형석이와 채린이에게<br>축하메시지를 남겨주세요!</p>
+            <button class="add-message-button">축하글 남기기</button>
             <div class="guestbook-entries">
                 <!-- 방명록 메시지들이 들어갈 공간 -->
             </div>
-            <button class="add-message-button">축하글 남기기</button>
         </div>
         <!-- Guestbook Modal -->
         <div id="guestbook-modal" class="modal guestbook-modal">
@@ -349,7 +349,7 @@
 <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-    import { getFirestore } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+    import { getFirestore, collection, getDocs, deleteDoc, doc, getDoc, updateDoc, Timestamp, addDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
     // https://firebase.google.com/docs/web/setup#available-libraries
   
     // Your web app's Firebase configuration
@@ -364,6 +364,145 @@
   
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
-    window.db = getFirestore(app); // Firestore를 전역으로 설정
+    const db = getFirestore(app); // Firestore를 전역으로 설정
+
+    // 방명록 메시지 로드
+    async function loadGuestbookEntries() {
+        const entriesContainer = document.querySelector('.guestbook-entries');
+        entriesContainer.innerHTML = ''; // 기존 메시지 초기화
+
+        const querySnapshot = await getDocs(collection(db, 'guestbook'));
+        querySnapshot.forEach((doc) => {
+            const entry = doc.data();
+            const entryElement = document.createElement('div');
+            entryElement.className = 'guestbook-entry';
+            entryElement.innerHTML = `
+                <div class="entry-header">
+                    <span>${entry.name}</span>
+                    <div class="entry-buttons">
+                        <button class="edit-button" data-id="${doc.id}">수정</button>
+                        <button class="delete-button" data-id="${doc.id}">삭제</button>
+                    </div>
+                </div>
+                <p class="entry-message">${entry.message}</p>
+            `;
+            entriesContainer.appendChild(entryElement);
+        });
+
+        attachButtonHandlers(); // 버튼 이벤트 핸들러 연결
+    }
+
+    // 초기 로드
+    loadGuestbookEntries();
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('guestbook-modal');
+        const guestbookForm = document.getElementById('guestbook-form');
+        const closeButton = document.querySelector('.close-button');
+        const addMessageButton = document.querySelector('.add-message-button');
+
+        // 모달 열기
+        addMessageButton.addEventListener('click', () => {
+            modal.style.display = 'flex';
+        });
+
+        // 모달 닫기
+        closeButton.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // 폼 제출 처리
+        guestbookForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const password = document.getElementById('password').value;
+            const message = document.getElementById('message').value;
+
+            try {
+                const hashedPassword = await hashPassword(password);
+
+                // Firestore에 데이터 추가
+                await addDoc(collection(db, 'guestbook'), {
+                    name: name,
+                    password: hashedPassword,
+                    message: message,
+                    date: Timestamp.fromDate(new Date())
+                });
+
+                showToast('축하메시지가 발송되었습니다!');
+                guestbookForm.reset(); // 폼 초기화
+                modal.style.display = 'none'; // 모달 닫기
+
+                await loadGuestbookEntries();
+            } catch (error) {
+                console.error('Error saving message: ', error);
+                showToast('메시지 저장 중 오류가 발생했습니다.');
+            }
+        });
+    });
+
+    async function verifyPassword(inputPassword, hashedPassword) {
+        const hashedInputPassword = await hashPassword(inputPassword);
+        return hashedInputPassword === hashedPassword;
+    }
+    // 수정 삭제
+    function attachButtonHandlers() {
+        document.querySelectorAll('.delete-button').forEach(button => {
+            button.addEventListener('click', async (e) => {
+                const docId = e.target.dataset.id;
+                const docRef = doc(db, 'guestbook', docId);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const storedPassword = docSnap.data().password;
+                    const inputPassword = prompt('비밀번호를 입력하세요:');
+
+                    if (await verifyPassword(inputPassword, storedPassword)) {
+                        await deleteDoc(docRef);
+                        showToast('메시지가 삭제되었습니다.');
+                        loadGuestbookEntries(); // 메시지 목록 갱신
+                    } else {
+                        showToast('비밀번호가 일치하지 않습니다.');
+                    }
+                } else {
+                    console.error('문서를 찾을 수 없습니다.');
+                }
+            });
+        });
+
+        document.querySelectorAll('.edit-button').forEach(button => {
+            button.addEventListener('click', async (e) => {
+                const docId = e.target.dataset.id;
+                const docRef = doc(db, 'guestbook', docId);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const storedPassword = docSnap.data().password;
+                    const inputPassword = prompt('비밀번호를 입력하세요:');
+
+                    if (await verifyPassword(inputPassword, storedPassword)) {
+                        const newMessage = prompt('새 메시지를 입력하세요:', docSnap.data().message);
+                        if (newMessage) {
+                            await updateDoc(docRef, { message: newMessage });
+                            showToast('메시지가 수정되었습니다.');
+                            loadGuestbookEntries(); // 메시지 목록 갱신
+                        }
+                    } else {
+                        showToast('비밀번호가 일치하지 않습니다.');
+                    }
+                } else {
+                    console.error('문서를 찾을 수 없습니다.');
+                }
+            });
+        });
+
+    }
 </script>
 </html>
