@@ -798,6 +798,41 @@ html {
     margin: 2vw 0;
 }
 
+/* Dining Guide Container */
+.dining-container {
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
+    text-align: center;
+    margin-top: 20vw;
+    padding: 4vw;
+}
+
+/* Title */
+.dining-container .title {
+    font-family: 'American Captain Condensed', sans-serif;
+    font-size: 6vw;
+    margin-bottom: 4vw;
+    letter-spacing: 0.7vw;
+    color: rgba(145, 170, 145);
+    text-align: center;
+}
+
+.dining-container .content {
+    font-size: 4vw;
+    line-height: 1.8;
+    color: rgb(33, 33, 33);
+    text-align: center;
+    background-color: rgba(245, 245, 245, 0.8); /* 연한 배경 */
+    border-radius: 2vw; /* 둥근 테두리 */
+    position: relative; /* 타이틀의 위치를 기준으로 조정 */
+    padding-top: 6vw; /* 타이틀을 위해 여백 추가 */
+}
+
+/* 강조 텍스트 */
+.dining-container .content strong {
+    font-weight: bold;
+    color: rgba(228, 146, 146, 0.9); /* 강조 색상 */
+}
+
 /* ACCOUNT */
 .account-container {
     font-family: 'Hakgyoansim Badasseugi', sans-serif;
