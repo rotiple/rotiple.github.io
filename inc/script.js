@@ -330,36 +330,6 @@ let cd = new Countdown({
 cd.start();
 
 // gallery
-const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modal-img");
-const galleryItems = document.querySelectorAll(".gallery-item");
-const moreButton = document.getElementById("moreButton");
-let currentIndex = 0;
-
-// 모달 창 열기 기능
-galleryItems.forEach((item, index) => {
-    item.addEventListener("click", () => {
-        modal.style.display = "flex";
-        modalImg.src = item.src;
-        currentIndex = index;
-    });
-});
-
-// 모달 닫기 기능
-document.querySelector(".button.close").addEventListener("click", () => {
-    modal.style.display = "none";
-});
-
-// 좌우 버튼 기능
-document.querySelector(".button.prev").addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-    modalImg.src = galleryItems[currentIndex].src;
-});
-
-document.querySelector(".button.next").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % galleryItems.length;
-    modalImg.src = galleryItems[currentIndex].src;
-});
 
 // 더보기 버튼 클릭 시 숨겨진 이미지 보이기
 moreButton.addEventListener("click", () => {
@@ -367,6 +337,78 @@ moreButton.addEventListener("click", () => {
         item.classList.remove("hidden");
     });
     moreButton.style.display = "none"; // 더보기 버튼 숨김
+});
+
+// modal
+document.addEventListener('DOMContentLoaded', () => {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const swiperModal = document.getElementById('swiperModal');
+    const closeSwiperModal = document.querySelector('.close-swiper-modal');
+
+    let swiper;
+
+    function openSwiperModal(index) {
+        swiperModal.style.display = 'flex';
+
+        if (!swiper) {
+            initializeSwiper(index);
+        } else {
+            swiper.slideTo(index, 0);
+        }
+    }
+
+    function closeModal() {
+        swiperModal.style.display = 'none';
+    }
+
+    function initializeSwiper(startIndex) {
+        const swiperWrapper = document.querySelector('.swiper-wrapper');
+        swiperWrapper.innerHTML = ''; // 기존 슬라이드 제거
+
+        galleryItems.forEach((item) => {
+            const slide = document.createElement('div');
+            slide.classList.add('swiper-slide');
+            const img = document.createElement('img');
+            img.src = item.src;
+            img.alt = item.alt;
+            slide.appendChild(img);
+            swiperWrapper.appendChild(slide);
+        });
+
+        swiper = new Swiper('.swiper', {
+            initialSlide: startIndex,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                dynamicBullets: true,
+            },
+            // centeredSlides: true,
+            // zoom: true,
+            // spaceBetween: 30,
+            effect: 'slide', // 여기서 효과를 선택 (slide, fade, cube, coverflow, flip)
+            fadeEffect: {
+                crossFade: true, // 페이드 효과에서 부드럽게 전환
+            },
+        });
+    }
+
+    galleryItems.forEach((item, index) => {
+        item.addEventListener('click', () => openSwiperModal(index));
+    });
+
+    closeSwiperModal.addEventListener('click', closeModal);
+
+    // Swiper 컨테이너 내부 클릭 처리
+    swiperModal.addEventListener('click', (event) => {
+        // 클릭된 대상이 Swiper(사진 영역)가 아니라면 모달 닫기
+        if (!event.target.closest('.swiper-slide img') && !event.target.closest('.swiper-button-next') && !event.target.closest('.swiper-button-prev')) {
+            closeModal();
+        }
+    });
 });
 
 
@@ -439,10 +481,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const textToCopy = copyButton.getAttribute('data-clipboard-text');
         console.log(textToCopy);
         navigator.clipboard.writeText(textToCopy).then(() => {
-            showToast('복사되었습니다!');
+            showToast('복사되었습니다!!');
         }).catch(err => {
             fallbackCopyTextToClipboard(textToCopy);
-            showToast('복사되었습니다!');
+            showToast('복사되었습니다!!');
         });
     });
 

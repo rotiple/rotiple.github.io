@@ -6,8 +6,9 @@
     <title>결혼식 초대</title>
     <link rel="stylesheet" href="inc/style.css">
     <script src="inc/script.js" defer></script>
-    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.3/kakao.min.js" integrity="sha384-kLbo2SvoNtOFiniJ1EQ9o2iDA8i3xp+O6Cns+L5cd4RsOJfl+43z5pvieT2ayq3C" crossorigin="anonymous"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Sans+KR:wght@100..900&family=Single+Day&display=swap" rel="stylesheet">
@@ -173,15 +174,19 @@
                 <div class="more-button" id="moreButton">사진 더 보기</div>
             </div>
             
-            <div class="modal" id="modal">
-                <div class="modal-container">
-                    <img class="modal-content" id="modal-img">
-                    <div class="modal-buttons">
-                        <button class="button prev">&#10094;</button>
-                        <button class="button next">&#10095;</button>
-                        <button class="button close">&times;</button>
+            <!-- Swiper Modal -->
+            <div id="swiperModal" class="swiper-modal">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <!-- 슬라이드 이미지가 동적으로 추가됩니다 -->
                     </div>
+                    <!-- 내비게이션 버튼 -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <!-- 페이지네이션 -->
+                    <div class="swiper-pagination"></div>
                 </div>
+                <button class="close-swiper-modal">X</button>
             </div>
             
             <div class="footer-container">
