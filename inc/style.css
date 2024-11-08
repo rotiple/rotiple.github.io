@@ -329,198 +329,46 @@ html {
     font-weight: bold;
 }
 
-/* countdown */
-@-webkit-keyframes last_rotate {
-    0% {
-        -webkit-transform: rotateX(0deg);
-        transform: rotateX(0deg);
-        z-index: 1;
-    }
-
-    100% {
-        -webkit-transform: rotateX(-180deg);
-        transform: rotateX(-180deg);
-        z-index: 0;
-    }
-}
-
-@keyframes last_rotate {
-    0% {
-        -webkit-transform: rotateX(0deg);
-        transform: rotateX(0deg);
-        z-index: 1;
-    }
-
-    100% {
-        -webkit-transform: rotateX(-180deg);
-        transform: rotateX(-180deg);
-        z-index: 0;
-    }
-}
-
-@-webkit-keyframes new_rotate {
-    0% {
-        -webkit-transform: rotateX(0deg);
-        transform: rotateX(0deg);
-        z-index: 0;
-    }
-
-    100% {
-        -webkit-transform: rotateX(-180deg);
-        transform: rotateX(-180deg);
-        z-index: 1;
-    }
-}
-
-@keyframes new_rotate {
-    0% {
-        -webkit-transform: rotateX(0deg);
-        transform: rotateX(0deg);
-        z-index: 0;
-    }
-
-    100% {
-        -webkit-transform: rotateX(-180deg);
-        transform: rotateX(-180deg);
-        z-index: 1;
-    }
-}
-
-.flip-countdown {
-    margin-top: 10vw;
-    display: flex;
-    justify-content: center;
-    font-family: 'Hakgyoansim Badasseugi', sans-serif;
-    font-size: 6vw;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    overflow: hidden;
-}
-
-.interval_cont {
-    display: flex;
-    justify-content: space-around;
-    width: auto;
-    overflow: hidden;
-}
-
-.interval_cont:nth-child(n+1):not(:last-child) {
-    margin-right: 2vw;
-}
-
-.description {
+/* Countdown */
+.countdown-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1vw;
-    margin-right: 2vw;
-    font-size: 3vw;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #7791a8;
-    text-shadow: 0.05em 0.05em 0.1em rgba(136, 110, 87, 0.3);
-    overflow: hidden;
+    gap: 3vw; /* 항목 간의 간격 */
+    font-family: 'Hakgyoansim Badasseugi', sans-serif, Courier, monospace;
+    margin-top: 5vw;
 }
 
-.digit_cont {
-    position: relative;
-    width: 1.2em;
-    height: 1.5em;
+.countdown-container .countdown-item {
+    display: flex;
+    flex-direction: column; /* 세로로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+}
+
+.countdown-container .label {
+    font-size: 3vw;
+    color: #7791a8;
+    text-shadow: 0.05em 0.05em 0.1em rgba(136, 110, 87, 0.3);
+    font-weight: bold;
+    margin-bottom: 0.5vw; /* 라벨과 숫자 사이의 간격 */
+}
+
+.countdown-container .number {
+    font-size: 6vw;
     font-weight: 900;
     line-height: 1.5em;
     border-radius: 0.25em;
+    color: #4c6377; 
+}
+
+.countdown-container .separator {
+    font-size: 5vw; /* 숫자와 동일한 크기로 설정 */
+    font-weight: 900;
     color: #4c6377;
-    border-bottom: 0.01em solid rgba(76, 99, 119, 0.1);
-    box-shadow: 0 0.2em 0.3em -0.1em rgba(76, 99, 119, 0.1);
-    -webkit-perspective: 3em;
-    perspective: 3em;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.digit_cont:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    height: 0.015em;
-    background: rgba(141, 163, 182, 0.25);
-    box-shadow: 0 0.01em 0.02em 0 rgba(255, 255, 255, 0.1);
-    z-index: 1;
-}
-
-.digit_cont:nth-child(n+1):not(:last-child) {
-    margin-right: 0.05em;
-}
-
-.digit_cont span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 50%;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.digit_cont .last_placeholder,
-.digit_cont .new_placeholder,
-.digit_cont .last_rotate,
-.digit_cont .new_rotate {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    text-align: center;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-.digit_cont .last_placeholder {
-    bottom: 0;
-    border-radius: 0 0 0.25em 0.25em;
-    background: linear-gradient(to bottom, #dae1e8 -90%, #fff 100%), #dae1e8;
-}
-
-.digit_cont .new_placeholder {
-    box-shadow: inset 0 0.01em 0 0 rgba(255, 255, 255, 0.5);
-}
-
-.digit_cont .new_placeholder,
-.digit_cont .last_rotate,
-.digit_cont .new_rotate {
-    top: 0;
-    border-radius: 0.25em 0.25em 0 0;
-    background: linear-gradient(to bottom, #dae1e8 10%, #fff 200%), #dae1e8;
-}
-
-.digit_cont .last_rotate {
-    -webkit-transform-origin: 100% 100%;
-    transform-origin: 100% 100%;
-    -webkit-animation: last_rotate 0.5s linear forwards;
-    animation: last_rotate 0.5s linear forwards;
-}
-
-.digit_cont .new_rotate {
-    border-top: 0.01em solid rgba(76, 99, 119, 0.3);
-    background: linear-gradient(to top, #dae1e8 -90%, #fff 100%), #dae1e8;
-    -webkit-transform-origin: 100% 100%;
-    transform-origin: 100% 100%;
-    -webkit-animation: new_rotate 0.5s linear forwards;
-    animation: new_rotate 0.5s linear forwards;
-}
-
-.digit_cont .new_rotate .rotated {
-    width: 100%;
-    height: 100%;
-    border-radius: 0 0 0.25em 0.25em;
-    -webkit-transform: rotateX(180deg);
-    transform: rotateX(180deg);
-    overflow: hidden;
-}
+    display: inline-block; /* 인라인 블록으로 변경 */
+    vertical-align: middle; /* 숫자와 같은 높이로 정렬 */
+    margin: 0 1vw; /* 좌우 여백 설정 */
+}    
 
 /* dday */
 .dday-container {
@@ -792,7 +640,7 @@ html {
 }
 
 /* 구분선 스타일 */
-.separator {
+.location-container .separator {
     height: 1px;
     background-color: #ddd; /* 연한 회색 */
     margin: 2vw 0;
@@ -851,7 +699,7 @@ html {
 }
 
 /* Account section styles */
-.account-section {
+.account-container .account-section {
     background-color: rgba(245, 245, 245, 0.8); /* 둥근 네모 배경 */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 살짝 입체감 추가 */
     border-radius: 1vw;
@@ -859,7 +707,7 @@ html {
     margin-bottom: 4vw;
 }
 
-.account-section .section-title {
+.account-container .account-section .section-title {
     font-family: 'Hakgyoansim Badasseugi B', sans-serif;
     font-size: 5vw;
     color: rgba(77, 77, 77, 0.9);
@@ -867,7 +715,7 @@ html {
 }
 
 /* Account item styles */
-.account-item {
+.account-container .account-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -875,18 +723,18 @@ html {
     padding: 1vw 0;
 }
 
-.account-item p {
+.account-container .account-item p {
     font-size: 4vw;
     margin: 0;
     color: rgb(33, 33, 33);
 }
 
-.account-item strong {
+.account-container .account-item strong {
     font-weight: bold;
 }
 
 /* 복사 버튼 스타일 */
-.copy-account-button {
+.account-container .copy-account-button {
     font-size: 3.5vw;
     background-color: rgba(145, 170, 145, 0.1);
     border: 0.2vw solid rgba(145, 170, 145);
@@ -897,12 +745,12 @@ html {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.copy-account-button:hover {
+.account-container .copy-account-button:hover {
     background-color: rgba(145, 170, 145, 0.2);
 }
 
 /* Separator */
-.separator {
+.account-container .separator {
     height: 1px;
     background-color: #ddd;
     margin: 2vw 0;
@@ -1171,47 +1019,6 @@ html {
         opacity: 1;
         transform: scale(1);
     }
-}
-
-
-.countdown-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3vw; /* 항목 간의 간격 */
-    font-family: 'Hakgyoansim Badasseugi', sans-serif, Courier, monospace;
-    margin-top: 10vw;
-}
-
-.countdown-item {
-    display: flex;
-    flex-direction: column; /* 세로로 정렬 */
-    align-items: center; /* 가운데 정렬 */
-}
-
-.label {
-    font-size: 3vw;
-    color: #7791a8;
-    text-shadow: 0.05em 0.05em 0.1em rgba(136, 110, 87, 0.3);
-    font-weight: bold;
-    margin-bottom: 0.5vw; /* 라벨과 숫자 사이의 간격 */
-}
-
-.number {
-    font-size: 6vw;
-    font-weight: 900;
-    line-height: 1.5em;
-    border-radius: 0.25em;
-    color: #4c6377;
-    /* border-bottom: 0.01em solid rgba(76, 99, 119, 0.1); */
-    box-shadow: 0 0.2em 0.3em -0.1em rgba(76, 99, 119, 0.1);
-}
-
-.separator {
-    font-size: 5vw; /* 숫자와 동일한 크기로 설정 */
-    font-weight: 900;
-    color: #4c6377;
-    align-items: center; /* 세로 가운데 정렬 */
 }
 
 
