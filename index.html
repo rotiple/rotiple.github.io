@@ -322,9 +322,34 @@
                     <button type="submit" class="submit-button">메시지 남기기</button>
                 </form>
             </div>
-        </div>        
+        </div>
 
-            
+        <!-- 비밀번호 확인 모달 -->
+        <div id="password-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>비밀번호 확인</h2>
+                <form id="password-form">
+                    <label for="password-input">비밀번호:</label>
+                    <input type="password" id="password-input" required>
+                    <button type="submit" class="submit-button">확인</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 수정 모달 -->
+        <div id="edit-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>메시지 수정</h2>
+                <form id="edit-form">
+                    <label for="edit-message">새 메시지:</label>
+                    <textarea id="edit-message" rows="4" required></textarea>
+                    <button type="submit" class="submit-button">수정</button>
+                </form>
+            </div>
+        </div>
+
         <div class="footer-container">
             <div id="toast"></div>
             <div class="share-buttons">
@@ -347,6 +372,10 @@
     </div>
 </body>
 <script type="module">
+    function convertNewlinesToBr(text) {
+        return text.replace(/\n/g, '<br>'); // \n을 <br>로 변환
+    }
+
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
     import { getFirestore, collection, getDocs, deleteDoc, doc, getDoc, updateDoc, Timestamp, addDoc, query, orderBy } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
@@ -387,41 +416,62 @@
                         <button class="delete-button" data-id="${doc.id}">삭제</button>
                     </div>
                 </div>
-                <p class="entry-message">${entry.message}</p>
+                <p class="entry-message">${convertNewlinesToBr(entry.message)}</p>
             `;
             entriesContainer.appendChild(entryElement);
         });
 
-        attachButtonHandlers(); // 버튼 이벤트 핸들러 연결
+        // attachButtonHandlers(); // 버튼 이벤트 핸들러 연결
     }
 
     // 초기 로드
     loadGuestbookEntries();
 
     document.addEventListener('DOMContentLoaded', () => {
-        const modal = document.getElementById('guestbook-modal');
-        const guestbookForm = document.getElementById('guestbook-form');
-        const closeButton = document.querySelector('.close-button');
-        const addMessageButton = document.querySelector('.add-message-button');
+        const guestbookModal = document.getElementById('guestbook-modal'); // 메시지 추가 모달
+        const passwordModal = document.getElementById('password-modal');  // 비밀번호 확인 모달
+        const editModal = document.getElementById('edit-modal');          // 메시지 수정 모달
 
-        // 모달 열기
-        addMessageButton.addEventListener('click', () => {
+        const guestbookForm = document.getElementById('guestbook-form');  // 메시지 추가 폼
+        const passwordForm = document.getElementById('password-form');    // 비밀번호 확인 폼
+        const editForm = document.getElementById('edit-form');            // 메시지 수정 폼
+        const passwordInput = document.getElementById('password-input');  // 비밀번호 입력 필드
+        const editMessageInput = document.getElementById('edit-message'); // 수정 메시지 입력 필드
+
+        const addMessageButton = document.querySelector('.add-message-button'); // 메시지 추가 버튼
+
+        let currentDocId = null; // 현재 수정 또는 삭제 대상 문서 ID
+        let isEditMode = false;  // 수정인지 삭제인지 구분 플래그
+
+        // 공통 모달 열기/닫기 함수
+        function openModal(modal) {
+            document.querySelectorAll('.modal').forEach(m => (m.style.display = 'none')); // 다른 모달 닫기
             modal.style.display = 'flex';
-        });
+        }
 
-        // 모달 닫기 버튼 이벤트
-        closeButton.addEventListener('click', () => {
+        function closeModal(modal) {
             modal.style.display = 'none';
+        }
+
+        // 닫기 버튼 및 외부 클릭으로 모든 모달 닫기
+        document.querySelectorAll('.close-button').forEach(button => {
+            button.addEventListener('click', () => {
+                closeModal(button.closest('.modal'));
+            });
         });
 
-        // 모달 외부 클릭 시 닫기
         window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
+            if (event.target.classList.contains('modal')) {
+                closeModal(event.target);
             }
         });
 
-        // 폼 제출 처리
+        // 메시지 추가 모달 열기
+        addMessageButton.addEventListener('click', () => {
+            openModal(guestbookModal); // 입력 모달만 열기
+        });
+
+        // 메시지 추가 처리
         guestbookForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -434,79 +484,80 @@
 
                 // Firestore에 데이터 추가
                 await addDoc(collection(db, 'guestbook'), {
-                    name: name,
+                    name,
                     password: hashedPassword,
-                    message: message,
+                    message,
                     date: Timestamp.fromDate(new Date())
                 });
 
-                showToast('축하메시지가 발송되었습니다!');
                 guestbookForm.reset(); // 폼 초기화
-                modal.style.display = 'none'; // 모달 닫기
-
-                await loadGuestbookEntries();
+                closeModal(guestbookModal); // 모달 닫기
+                await loadGuestbookEntries(); // 방명록 갱신
             } catch (error) {
-                console.error('Error saving message: ', error);
-                showToast('메시지 저장 중 오류가 발생했습니다.');
+                console.error('Error saving message:', error);
+                showt('메시지 저장 중 오류가 발생했습니다.');
             }
         });
+
+        // 삭제 버튼 클릭 시 비밀번호 확인 모달 열기
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('delete-button')) {
+                currentDocId = e.target.dataset.id;
+                isEditMode = false; // 삭제 모드
+                openModal(passwordModal); // 비밀번호 확인 모달 열기
+            }
+        });
+
+        // 수정 버튼 클릭 시 비밀번호 확인 모달 열기
+        document.addEventListener('click', async (e) => {
+            if (e.target.classList.contains('edit-button')) {
+                currentDocId = e.target.dataset.id;
+                isEditMode = true; // 수정 모드
+                openModal(passwordModal); // 비밀번호 확인 모달 열기
+            }
+        });
+
+        // 비밀번호 확인 처리
+        passwordForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const docSnap = await getDoc(doc(db, 'guestbook', currentDocId));
+            if (docSnap.exists() && await verifyPassword(passwordInput.value, docSnap.data().password)) {
+                closeModal(passwordModal); // 비밀번호 확인 모달 닫기
+                passwordInput.value = ''; // 비밀번호 입력 초기화
+
+                if (isEditMode) {
+                    // 수정 모드인 경우 수정 모달 열기
+                    editMessageInput.value = docSnap.data().message;
+                    openModal(editModal);
+                } else {
+                    // 삭제 모드인 경우 삭제 진행
+                    await deleteDoc(doc(db, 'guestbook', currentDocId));
+                    showToast('메시지가 삭제되었습니다.');
+                    loadGuestbookEntries(); // 방명록 갱신
+                }
+            } else {
+                showToast('비밀번호가 일치하지 않습니다.');
+            }
+        });
+
+        // 메시지 수정 처리
+        editForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const newMessage = editMessageInput.value;
+            await updateDoc(doc(db, 'guestbook', currentDocId), { message: newMessage });
+            showToast('메시지가 수정되었습니다.');
+            closeModal(editModal); // 수정 모달 닫기
+            loadGuestbookEntries(); // 방명록 갱신
+        });
     });
+
+
 
     async function verifyPassword(inputPassword, hashedPassword) {
         const hashedInputPassword = await hashPassword(inputPassword);
         return hashedInputPassword === hashedPassword;
-    }
-    // 수정 삭제
-    function attachButtonHandlers() {
-        document.querySelectorAll('.delete-button').forEach(button => {
-            button.addEventListener('click', async (e) => {
-                const docId = e.target.dataset.id;
-                const docRef = doc(db, 'guestbook', docId);
-                const docSnap = await getDoc(docRef);
-
-                if (docSnap.exists()) {
-                    const storedPassword = docSnap.data().password;
-                    const inputPassword = prompt('비밀번호를 입력하세요:');
-
-                    if (await verifyPassword(inputPassword, storedPassword)) {
-                        await deleteDoc(docRef);
-                        showToast('메시지가 삭제되었습니다.');
-                        loadGuestbookEntries(); // 메시지 목록 갱신
-                    } else {
-                        showToast('비밀번호가 일치하지 않습니다.');
-                    }
-                } else {
-                    console.error('문서를 찾을 수 없습니다.');
-                }
-            });
-        });
-
-        document.querySelectorAll('.edit-button').forEach(button => {
-            button.addEventListener('click', async (e) => {
-                const docId = e.target.dataset.id;
-                const docRef = doc(db, 'guestbook', docId);
-                const docSnap = await getDoc(docRef);
-
-                if (docSnap.exists()) {
-                    const storedPassword = docSnap.data().password;
-                    const inputPassword = prompt('비밀번호를 입력하세요:');
-
-                    if (await verifyPassword(inputPassword, storedPassword)) {
-                        const newMessage = prompt('새 메시지를 입력하세요:', docSnap.data().message);
-                        if (newMessage) {
-                            await updateDoc(docRef, { message: newMessage });
-                            showToast('메시지가 수정되었습니다.');
-                            loadGuestbookEntries(); // 메시지 목록 갱신
-                        }
-                    } else {
-                        showToast('비밀번호가 일치하지 않습니다.');
-                    }
-                } else {
-                    console.error('문서를 찾을 수 없습니다.');
-                }
-            });
-        });
-
     }
 </script>
 </html>

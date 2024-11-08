@@ -931,7 +931,7 @@ html {
 }
 
 /* Submit Button */
-.submit-button {
+.modal-content .submit-button {
     margin-top: 15px;
     padding: 10px 20px;
     background-color: rgba(145, 170, 145, 0.8);
@@ -944,7 +944,7 @@ html {
     transition: background-color 0.3s;
 }
 
-.submit-button:hover {
+.modal-content .submit-button:hover {
     background-color: rgba(145, 170, 145, 1);
 }
 
@@ -1035,7 +1035,7 @@ html {
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 2000;
     font-size: 17px;
     opacity: 0;
     transition: opacity 0.5s, visibility 0.5s;
