@@ -69,41 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     Kakao.init('b693b30df0a49a177c175e119c6efd59');
-
-    // document.getElementById('kakaoShareButton').addEventListener('click', () => {
-    //     const customMessage = document.getElementById('customMessage').value.trim();
-    //     const selectedCase = document.querySelector('input[name="case"]:checked').value;
-
-    //     // Base64 인코딩된 메시지
-    //     function encodeBase64(str) {
-    //         return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (_, p1) => String.fromCharCode('0x' + p1)));
-    //     }
-
-    //     const encodedMessage = encodeBase64(customMessage);
-    //     const urlWithParams = `${url}?n=${encodedMessage}&t=${selectedCase}`; // 파라미터 포함 URL
-
-    //     Kakao.Share.sendDefault({
-    //         objectType: 'feed',
-    //         content: {
-    //             title: '장형석 ᰔ 남채린, 결혼합니다!',
-    //             description: '2025년 2월 16일 일요일 오전 11시 ...',
-    //             imageUrl: 'https://장형석남채린결혼합니다.메인.한국/img/main.webp', // 미리보기 이미지 URL
-    //             link: {
-    //                 mobileWebUrl: urlWithParams,
-    //                 webUrl: urlWithParams
-    //             }
-    //         },
-    //         buttons: [
-    //             {
-    //                 title: '청첩장 보기',
-    //                 link: {
-    //                     mobileWebUrl: urlWithParams,
-    //                     webUrl: urlWithParams
-    //                 }
-    //             }
-    //         ]
-    //     });
-    // });
     document.getElementById('kakaoShareButton').addEventListener('click', () => {
         const customMessage = document.getElementById('customMessage').value.trim();
         const selectedCase = document.querySelector('input[name="case"]:checked').value;

@@ -300,7 +300,11 @@ document.addEventListener('DOMContentLoaded', () => {
 Kakao.init('b693b30df0a49a177c175e119c6efd59');
 document.getElementById('kakao-share').addEventListener('click', () => {
     Kakao.Share.sendCustom({
-        templateId: 114037
+        templateId: 114037,
+        templateArgs: {
+            name: "",
+            type: ""
+        }
     });
 });
 
