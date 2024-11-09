@@ -364,3 +364,18 @@ document.getElementById('toggle-map-button').addEventListener('click', function(
         toggleButton.textContent = '지도보기';
     }
 });
+
+//티맵 길안내
+function tMap(name,lat,lng){
+    location.href = "https://apis.openapi.sk.com/tmap/app/routes?appKey=l7xx7179ddde21ca4bfb8e6b03c710138f41&name="+name+"&lon="+lng+"&lat="+lat;
+}
+
+//카카오맵 길안내
+function kakaoMap(name,lat,lng){
+    location.href = "https://map.kakao.com/link/to/"+name+","+lat+","+lng;
+}
+
+//네이버맵 길안내
+function naverMap(name,lat,lng){
+    location.href = "http://app.map.naver.com/launchApp/?version=11&menu=navigation&elat="+lat+"&elng="+lng+"&etitle="+name;
+}
