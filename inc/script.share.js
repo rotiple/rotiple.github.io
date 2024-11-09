@@ -1,3 +1,5 @@
+url = "https://장형석남채린결혼합니다.메인.한국"
+
 document.addEventListener('DOMContentLoaded', () => {
     const cases = {
         1: '저희 잘 살겠습니다!\n키워주셔서 감사합니다!',
@@ -37,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     copyButton.addEventListener('click', () => {
         const selectedCase = document.querySelector('input[name="case"]:checked').value;
         const encodedMessage = encodeBase64(customMessage.value.trim());
-        const url = `http://127.0.0.1:5501?n=${encodedMessage}&t=${selectedCase}`;
+        const url = `${url}?n=${encodedMessage}&t=${selectedCase}`;
 
         navigator.clipboard.writeText(url).then(() => {
             showToast('URL이 복사되었습니다!');
@@ -71,14 +73,40 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.removeChild(textArea);
     }
 
-    // 카카오톡 공유
-    Kakao.init('YOUR_APP_KEY'); // Kakao Developers에서 발급받은 앱 키 사용
-    kakaoShareButton.addEventListener('click', () => {
-        Kakao.Share.sendCustom({
-            templateId: YOUR_TEMPLATE_ID, // Kakao 플랫폼에서 템플릿 설정 후 ID 입력
-            templateArgs: {
-                message: messagePreview.textContent
-            }
+    Kakao.init('b693b30df0a49a177c175e119c6efd59');
+
+    document.getElementById('kakaoShareButton').addEventListener('click', () => {
+        const customMessage = document.getElementById('customMessage').value.trim();
+        const selectedCase = document.querySelector('input[name="case"]:checked').value;
+
+        // Base64 인코딩된 메시지
+        function encodeBase64(str) {
+            return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (_, p1) => String.fromCharCode('0x' + p1)));
+        }
+
+        const encodedMessage = encodeBase64(customMessage);
+        const urlWithParams = `${url}?n=${encodedMessage}&t=${selectedCase}`; // 파라미터 포함 URL
+
+        Kakao.Share.sendDefault({
+            objectType: 'feed',
+            content: {
+                title: '장형석 ᰔ 남채린, 결혼합니다!',
+                description: '2025년 2월 16일 일요일 오전 11시 ...',
+                imageUrl: 'https://장형석남채린결혼합니다.메인.한국/img/main.webp', // 미리보기 이미지 URL
+                link: {
+                    mobileWebUrl: urlWithParams,
+                    webUrl: urlWithParams
+                }
+            },
+            buttons: [
+                {
+                    title: '청첩장 보기',
+                    link: {
+                        mobileWebUrl: urlWithParams,
+                        webUrl: urlWithParams
+                    }
+                }
+            ]
         });
     });
 });
