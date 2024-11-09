@@ -606,7 +606,7 @@ html {
 .map-container {
     width: 100vw;
     height: 60vw;
-    margin-bottom: 10vw;
+    margin-bottom: 3vw;
 }
 
 .transport-section {
@@ -648,9 +648,10 @@ html {
 }
 
 .location-container .app-button {
-    font-family: 'Hakgyoansim Badasseugi B', sans-serif;
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1vw;
     font-size: 3vw;
     padding: 2vw 2vw;
@@ -674,6 +675,13 @@ html {
 }
 
 /* 약도 이미지 버튼 스타일 */
+.map-image-button-section {
+    text-align: right;
+    margin-left : 10vw;
+    margin-right : 10vw;
+    margin-bottom: 2vw;
+}
+
 .location-container .map-image-button {
     font-size: 14px;
     padding: 10px 15px;
@@ -682,15 +690,19 @@ html {
     color: rgba(145, 170, 145);
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 3vw;
     transition: background-color 0.3s, color 0.3s;
-    display: block;
-    margin: 10px auto;
-    width: 80vw;
+    width: 25vw;
 }
 
 .location-container .map-image-button:hover {
     background-color: rgba(145, 170, 145, 0.2);
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 3vw;
 }
 
 /* 구분선 스타일 */

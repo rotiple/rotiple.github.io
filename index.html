@@ -197,9 +197,21 @@
                 더 컨벤션 반포 그랜드볼룸 2층
             </p>
             <button class="copy-address-button" data-clipboard-text="서울 서초구 사평대로 108">주소 복사</button>
-        
+            
+            <!-- 약도 이미지 보기 버튼 -->
+            <div class="map-image-button-section">
+                <button class="map-image-button" id="toggle-map-button">약도보기</button>
+            </div>
+
+            <!-- 약도 이미지 -->
+            <div id="map-image-container" style="display: none;">
+                <img src="img/map.webp" alt="약도 이미지" class="map-image">
+            </div>
+
             <!-- 네이버 지도 API 삽입 영역 -->
-            <div id="map" class="map-container"></div>
+            <div id="naver-map-container">
+                <div id="map" class="map-container"></div>
+            </div>
             <script>
                 var elluce = new naver.maps.LatLng(37.498903, 126.996565)
                 var map = new naver.maps.Map('map', {
@@ -243,6 +255,15 @@
         
                 infowindow.open(map, marker);
             </script>
+
+            <!-- 네비게이션 버튼 -->
+            <div class="transport-section">
+                <div class="app-buttons">
+                    <a href="https://naver.me/5y4qqGoE" class="app-button naver-map"><img src="img/ico/navermap.png" alt="네이버지도"> 네이버지도</a>
+                    <a href="https://tmap.life/060fd5a9" class="app-button tmap"><img src="img/ico/tmap.png" alt="티맵">  티  맵</a>
+                    <a href="https://place.map.kakao.com/m/598171385" class="app-button kakao-navi"><img src="img/ico/kakaomap.png" alt="카카오지도"> 카카오지도</a>
+                </div>
+            </div>
 
             <!-- 지하철 정보 -->
             <div class="transport-section">
@@ -289,12 +310,7 @@
                     원하시는 앱을 선택하시면 길안내가 시작됩니다.
                 </p>
 
-                <!-- 네비게이션 버튼 -->
-                <div class="app-buttons">
-                    <a href="https://naver.me/5y4qqGoE" class="app-button naver-map"><img src="img/ico/navermap.png" alt="네이버지도"> 네이버지도</a>
-                    <a href="https://tmap.life/060fd5a9" class="app-button tmap"><img src="img/ico/tmap.png" alt="티맵">  티  맵</a>
-                    <a href="https://place.map.kakao.com/m/598171385" class="app-button kakao-navi"><img src="img/ico/kakaomap.png" alt="카카오지도"> 카카오지도</a>
-                </div>
+                
             </div>
 
             <!-- 주차 정보 -->
@@ -314,9 +330,6 @@
                     ☆ 도보 12분 / 셔틀버스 미운행<br><br>
                     ※ 주차장 협소하니 대중교통 이용 부탁드립니다.
                 </p>
-
-                <!-- 약도 이미지 보기 버튼 -->
-                <button class="map-image-button">약도 이미지 보기</button>
             </div>
         </div>
 

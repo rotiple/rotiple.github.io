@@ -329,3 +329,18 @@ async function hashPassword(password) {
         .join('');
 }
 
+document.getElementById('toggle-map-button').addEventListener('click', function() {
+    const naverMapContainer = document.getElementById('naver-map-container');
+    const mapImageContainer = document.getElementById('map-image-container');
+    const toggleButton = document.getElementById('toggle-map-button');
+    
+    if (naverMapContainer.style.display === 'none') {
+        naverMapContainer.style.display = 'block';
+        mapImageContainer.style.display = 'none';
+        toggleButton.textContent = '약도보기';
+    } else {
+        naverMapContainer.style.display = 'none';
+        mapImageContainer.style.display = 'block';
+        toggleButton.textContent = '지도보기';
+    }
+});

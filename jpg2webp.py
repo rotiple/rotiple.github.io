@@ -16,7 +16,7 @@ folder_path = r"C:\Users\opveo\Desktop\rotiple.github.io\img"
 #             # webp로 저장
 #             img.save(webp_path, 'WEBP')
 
-filename = r"C:\Users\opveo\Desktop\rotiple.github.io\img\food.jpg"
+filename = r"C:\Users\opveo\Desktop\rotiple.github.io\img\map.jpg"
 
 img_path = os.path.join(folder_path, filename)
 with Image.open(img_path) as img:
