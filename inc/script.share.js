@@ -1,4 +1,4 @@
-url = "https://장형석남채린결혼합니다.메인.한국"
+rurl = "https://장형석남채린결혼합니다.메인.한국"
 
 document.addEventListener('DOMContentLoaded', () => {
     const cases = {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     copyButton.addEventListener('click', () => {
         const selectedCase = document.querySelector('input[name="case"]:checked').value;
         const encodedMessage = encodeBase64(customMessage.value.trim());
-        const url = `${url}?n=${encodedMessage}&t=${selectedCase}`;
+        const url = `${rurl}?n=${encodedMessage}&t=${selectedCase}`;
 
         navigator.clipboard.writeText(url).then(() => {
             showToast('URL이 복사되었습니다!');
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Kakao.Share.sendCustom({
             templateId: 114037,
             templateArgs: {
-                name: customMessage,
+                name: encodedMessage,
                 type: selectedCase
             }
         });
