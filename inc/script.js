@@ -379,3 +379,15 @@ function kakaoMap(name,lat,lng){
 function naverMap(name,lat,lng){
     location.href = "http://app.map.naver.com/launchApp/?version=11&menu=navigation&elat="+lat+"&elng="+lng+"&etitle="+name;
 }
+
+$(document).ready(function(){
+    $(document).snowfall({
+        image :"img/flake.png", 
+        minSize: 10, 
+        maxSize: 30,
+        maxSpeed: 1,
+        flakeCount: 15,
+        // round: true,
+        // shadow: true
+    });
+});
