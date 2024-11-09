@@ -1,6 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
-    const name = params.get('n') ? decodeURIComponent(params.get('n')) : null;
+
+    function decodeBase64(str) {
+        try {
+            return decodeURIComponent(atob(str).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+        } catch (e) {
+            console.error('Base64 디코딩 실패:', e);
+            return str; // 디코딩 실패 시 원본 반환
+        }
+    }
+
+    const name = params.get('n') ? decodeBase64(params.get('n')) : null;
     const type = params.get('t');
 
     let message = "WEDDING";

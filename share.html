@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공유 페이지</title>
+    <link rel="stylesheet" href="inc/style.css">
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+</head>
+<body>
+    <div class="share-container">
+        <h1>공유 메시지 생성</h1>
+
+        <!-- Radio Buttons for Case Selection -->
+        <div class="case-selector">
+            <label><input type="radio" name="case" value="1" checked> 부모님</label>
+            <label><input type="radio" name="case" value="2"> 신랑친구</label>
+            <label><input type="radio" name="case" value="3"> 신부친구</label>
+            <label><input type="radio" name="case" value="4"> 신랑지인</label>
+            <label><input type="radio" name="case" value="5"> 신부지인</label>
+            <label><input type="radio" name="case" value="6"> 정중공통</label>
+            <label><input type="radio" name="case" value="7"> 자유</label>
+        </div>
+
+        <!-- Text Area for Custom Message -->
+        <textarea id="customMessage" placeholder="여기에 메시지를 입력하세요"></textarea>
+
+        <!-- Preview Section -->
+        <h3>미리보기</h3>
+        <div id="messagePreview" class="preview-box"></div>
+
+        <!-- Copy and Share Buttons -->
+        <button id="copyButton">복사하기</button>
+        <button id="kakaoShareButton">카카오톡 공유하기</button>
+    </div>
+
+    <div id="toast"></div>
+
+    <script src="inc/script.share.js" defer></script>
+    <link rel="stylesheet" href="inc/style.share.css">
+</body>
+</html>
