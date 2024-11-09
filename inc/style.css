@@ -79,7 +79,7 @@ html {
     margin-bottom: 0vw;
     font-size: 3vw;
     letter-spacing: 0.3vw;
-    color: rgba(145, 170, 145);
+    color: rgba(108, 131, 108);
     text-align: center;
 }
 
@@ -89,7 +89,7 @@ html {
     margin-bottom: 6vw;
     font-size: 7vw;
     letter-spacing: 0.7vw;
-    color: rgba(145, 170, 145);
+    color: rgba(108, 131, 108);
     text-align: center;
 }
 
@@ -234,7 +234,7 @@ html {
     margin-bottom: -3vw;
     font-size: 3vw;
     letter-spacing: 0.3vw;
-    color: rgba(145, 170, 145);
+    color: rgba(108, 131, 108);
 }
 
 .wise-content .title2 {
@@ -243,14 +243,14 @@ html {
     margin-bottom: 4vw;
     font-size: 7vw;
     letter-spacing: 0.7vw;
-    color: rgba(145, 170, 145);
+    color: rgba(108, 131, 108);
 }
 
 .wise-content h2 {
     margin-bottom: 4vw;
     font-size: 6vw;
     letter-spacing: 0.7vw;
-    color: rgba(145, 170, 145);
+    color: rgba(108, 131, 108);
 }
 
 .wise-content p {
@@ -414,7 +414,7 @@ html {
 
 .dday-container .days {
     font-weight: bold;
-    color: rgba(145, 170, 145);
+    color: rgba(108, 131, 108);
 }
 
 /* gallery */
@@ -454,10 +454,10 @@ html {
     margin-top: 2vw;
     font-size: 4vw;
     font-family: 'Hakgyoansim Badasseugi', sans-serif;
-    color: rgba(145, 170, 145);
+    color: rgba(108, 131, 108);
     background-color: transparent;
     padding: 0.8vw 2vw;
-    border: 0.2vw solid rgba(145, 170, 145);
+    border: 0.2vw solid rgba(108, 131, 108);
     border-radius: 3vw;
     text-align: center;
     display: inline-block;
@@ -467,14 +467,14 @@ html {
 }
 
 .gallery-container .more-button:hover {
-    background-color: rgba(145, 170, 145, 0.1);
+    background-color: rgba(108, 131, 108, 0.1);
 }
 
 .gallery-container .more-button::before {
     content: '\25BC'; /* 아래 화살표 */
     display: inline-block;
     font-size: 4vw;
-    color: rgba(145, 170, 145);
+    color: rgba(108, 131, 108);
     position: relative;
     margin-right: 0.5vw;
     animation: bounce 1.5s infinite ease-in-out;
@@ -596,9 +596,9 @@ html {
 .location-container .copy-address-button {
     font-family: 'Hakgyoansim Badasseugi', sans-serif;
     font-size: 4vw;
-    background-color: rgba(145, 170, 145, 0.1);
-    border: 0.2vw solid rgba(145, 170, 145);
-    color: rgba(145, 170, 145);
+    background-color: rgba(108, 131, 108, 0.1);
+    border: 0.2vw solid rgba(108, 131, 108);
+    color: rgba(108, 131, 108);
     padding: 1vw 3vw;
     border-radius: 3vw;
     cursor: pointer;
@@ -610,7 +610,7 @@ html {
 }
 
 .location-container .copy-address-button:hover {
-    background-color: rgba(145, 170, 145, 0.2);
+    background-color: rgba(108, 131, 108, 0.2);
 }
 
 /* 지도 컨테이너 스타일 */
@@ -666,9 +666,9 @@ html {
     gap: 1vw;
     font-size: 3vw;
     padding: 2vw 2vw;
-    background-color: rgba(145, 170, 145, 0.1);
-    border: 1px solid rgba(145, 170, 145);
-    color: rgba(145, 170, 145);
+    background-color: rgba(108, 131, 108, 0.1);
+    border: 1px solid rgba(108, 131, 108);
+    color: rgb(108, 131, 108);
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
@@ -682,7 +682,7 @@ html {
 }
 
 .location-container .app-button:hover {
-    background-color: rgba(145, 170, 145, 0.2);
+    background-color: rgba(108, 131, 108, 0.2);
 }
 
 /* 약도 이미지 버튼 스타일 */
@@ -697,9 +697,9 @@ html {
     font-family: 'Hakgyoansim Badasseugi', sans-serif;
     font-size: 4vw;
     padding: 2vw;
-    background-color: rgba(145, 170, 145, 0.1);
-    border: 1px solid rgba(145, 170, 145);
-    color: rgba(145, 170, 145);
+    background-color: rgba(108, 131, 108, 0.1);
+    border: 1px solid rgba(108, 131, 108);
+    color: rgba(108, 131, 108);
     border-radius: 5px;
     cursor: pointer;
     margin-top: 3vw;
@@ -708,7 +708,7 @@ html {
 }
 
 .location-container .map-image-button:hover {
-    background-color: rgba(145, 170, 145, 0.2);
+    background-color: rgba(108, 131, 108, 0.2);
 }
 
 .map-image {
@@ -857,9 +857,9 @@ html {
 .account-container .copy-account-button {
     font-family: 'Hakgyoansim Badasseugi', sans-serif;
     font-size: 3.5vw;
-    background-color: rgba(145, 170, 145, 0.1);
-    border: 0.2vw solid rgba(145, 170, 145);
-    color: rgba(145, 170, 145);
+    background-color: rgba(108, 131, 108, 0.1);
+    border: 0.2vw solid rgba(108, 131, 108);
+    color: rgba(108, 131, 108);
     padding: 1vw 2vw;
     border-radius: 3vw;
     cursor: pointer;
@@ -867,7 +867,7 @@ html {
 }
 
 .account-container .copy-account-button:hover {
-    background-color: rgba(145, 170, 145, 0.2);
+    background-color: rgba(108, 131, 108, 0.2);
 }
 
 /* Separator */
@@ -938,7 +938,7 @@ html {
 }
 
 .guestbook-entry .entry-buttons button:hover {
-    background-color: rgba(145, 170, 145, 0.1); /* hover 시 조금 더 강조 */
+    background-color: rgba(108, 131, 108, 0.1); /* hover 시 조금 더 강조 */
 }
 
 /* 모달 입력 스타일 */
@@ -955,7 +955,7 @@ html {
 /* 모달 버튼 */
 .modal-content .submit-button {
     font-size: 4vw;
-    background-color: rgba(145, 170, 145, 0.8);
+    background-color: rgba(108, 131, 108, 0.8);
     border-radius: 5px;
     margin-top: 1vw;
     cursor: pointer;
@@ -963,7 +963,7 @@ html {
 }
 
 .modal-content .submit-button:hover {
-    background-color: rgba(145, 170, 145, 1);
+    background-color: rgba(108, 131, 108, 1);
 }
 
 
@@ -971,9 +971,9 @@ html {
 .add-message-button {
     font-family: 'Hakgyoansim Badasseugi', sans-serif;
     font-size: 4vw;
-    background-color: rgba(145, 170, 145, 0.1);
-    border: 0.2vw solid rgba(145, 170, 145);
-    color: rgba(145, 170, 145);
+    background-color: rgba(108, 131, 108, 0.1);
+    border: 0.2vw solid rgba(108, 131, 108);
+    color: rgba(108, 131, 108);
     padding: 1vw 4vw;
     border-radius: 3vw;
     cursor: pointer;
@@ -983,7 +983,7 @@ html {
 }
 
 .add-message-button:hover {
-    background-color: rgba(145, 170, 145, 0.2);
+    background-color: rgba(108, 131, 108, 0.2);
 }
 
 /* Modal */
@@ -1047,7 +1047,7 @@ html {
 .modal-content .submit-button {
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: rgba(145, 170, 145, 0.8);
+    background-color: rgba(108, 131, 108, 0.8);
     color: white;
     border: none;
     border-radius: 5px;
@@ -1058,7 +1058,7 @@ html {
 }
 
 .modal-content .submit-button:hover {
-    background-color: rgba(145, 170, 145, 1);
+    background-color: rgba(108, 131, 108, 1);
 }
 
 /* 모달 닫기 버튼 */
@@ -1097,7 +1097,7 @@ html {
     justify-content: center; /* 아이콘과 텍스트가 버튼 안에서 가운데 정렬 */
     gap: 2vw;
     font-size: 4vw;
-    color: rgba(145, 170, 145);
+    color: rgba(108, 131, 108);
     background-color: transparent;
     border: none; /* 버튼의 보더 제거 */
     outline: none; /* 포커스 보더 제거 */
@@ -1117,7 +1117,7 @@ html {
 }
 
 .share-button svg {
-    fill: rgba(145, 170, 145);
+    fill: rgba(108, 131, 108);
     width: 1.5em;
     height: 1.5em;
 }
@@ -1125,14 +1125,14 @@ html {
 .copyright {
     text-align: center; /* 텍스트를 가운데 정렬 */
     font-size: 1.2vw;
-    color: rgba(145, 170, 145, 0.8); /* 연한 텍스트 */
+    color: rgba(108, 131, 108, 0.8); /* 연한 텍스트 */
     margin-top: 2vw;
     width: 100%;
 }
 
 .copyright .name {
     font-weight: bold;
-    color: rgba(145, 170, 145); /* 조금 더 진한 텍스트 */
+    color: rgba(108, 131, 108); /* 조금 더 진한 텍스트 */
 }
 
 /* toast */
