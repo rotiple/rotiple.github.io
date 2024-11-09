@@ -831,12 +831,12 @@ html {
     color: rgb(33, 33, 33);
     display: flex;
     gap: 10px; 
-    width: 50%; /* 전체 너비 사용 */
+    width: 100%; /* 전체 너비 사용 */
     justify-content: center; /* 양쪽 정렬 */
 }
 
 .account-container .account-item p:first-child {
-    width: 30%; /* 직책 부분 고정 너비 설정 */
+    width: 35%; /* 직책 부분 고정 너비 설정 */
     justify-content: space-between; /* 양쪽 정렬 */
 }
 
