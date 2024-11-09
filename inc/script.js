@@ -39,6 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 message = `${name}\n저희 결혼합니다!`;
                 fontSize = "9vw";
                 break;
+            case '7':
+                message = `${name}`;
+                fontSize = "9vw";
+                break;
             default:
                 message = "WEDDING";
                 fontFamily = "'American Captain Condensed Light', sans-serif";
