@@ -8,6 +8,7 @@
     <script src="inc/script.js" defer></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=dew043nbtg"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -199,6 +200,49 @@
         
             <!-- 네이버 지도 API 삽입 영역 -->
             <div id="map" class="map-container"></div>
+            <script>
+                var elluce = new naver.maps.LatLng(37.498903, 126.996565)
+                var map = new naver.maps.Map('map', {
+                  center: new naver.maps.LatLng(37.499363, 126.996565),
+                  zoom: 17,
+                  minZoom: 12, //지도의 최소 줌 레벨
+                  zoomControl: true, //줌 컨트롤의 표시 여부
+                  zoomControlOptions: { //줌 컨트롤의 옵션
+                      position: naver.maps.Position.TOP_RIGHT
+                }});
+                var marker = new naver.maps.Marker({
+                    position: elluce,
+                    map: map
+                });
+        
+                var contentString = [
+                    '<div style="background-color: white; border: 1px solid black; border-radius: 8px; padding: 10px; width: 180px; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">',
+                    '   <p style="font-size: 1rem; margin: 0; font-weight: bold;">더컨벤션반포</p>',
+                    '   <p style="font-size: 0.8rem; margin: 5px 0 0;">서울 서초구 사평대로 108</p>',
+                    '</div>'
+                ].join('');
+        
+                var infowindow = new naver.maps.InfoWindow({
+                    content: contentString,
+                    maxWidth: 200,
+                    backgroundColor: "transparent", // 기본 배경 제거
+                    borderWidth: 0, // 기본 테두리 제거
+                    disableAnchor: true,
+                    // anchorSize: new naver.maps.Size(0, -20), // 말풍선 꼬리 크기 설정
+                    pixelOffset: new naver.maps.Point(-100, -60), // 말풍선 전체 위치 조정
+                    // anchorAlign: naver.maps.Position.TOP // 말풍선 꼬리 기준 위치 설정
+                });
+        
+                naver.maps.Event.addListener(marker, "click", function(e) {
+                    if (infowindow.getMap()) {
+                        infowindow.close();
+                    } else {
+                        infowindow.open(map, marker);
+                    }
+                });
+        
+                infowindow.open(map, marker);
+            </script>
         
             <!-- 어플 실행 버튼들 -->
             <div class="app-buttons">

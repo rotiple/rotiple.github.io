@@ -599,6 +599,7 @@ html {
     transition: background-color 0.3s, color 0.3s;
     display: block;
     margin: 2vw auto; /* 가운데 정렬 */
+    margin-bottom: 5vw;
 }
 
 .location-container .copy-address-button:hover {
@@ -607,11 +608,9 @@ html {
 
 /* 지도 컨테이너 스타일 */
 .map-container {
-    width: 100%;
-    height: 40vw; /* 지도의 높이를 화면 너비에 비례하도록 설정 */
-    margin: 2vw 0;
-    border-radius: 1vw; /* 테두리 둥글게 */
-    overflow: hidden; /* 지도 내용이 넘치지 않도록 */
+    width: 100vw;
+    height: 60vw;
+    margin-bottom: 5vw;
 }
 
 /* 어플 실행 버튼 스타일 */
@@ -894,7 +893,7 @@ html {
     padding: 20px;
     border-radius: 10px;
     width: 90%;
-    max-width: 400px;
+    max-width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     font-family: 'Hakgyoansim Badasseugi', sans-serif;
