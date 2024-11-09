@@ -74,6 +74,25 @@ html {
     animation-fill-mode: forwards;
 }
 
+.title1 {
+    font-family: 'Hoefler Italic', sans-serif;
+    margin-bottom: 0vw;
+    font-size: 3vw;
+    letter-spacing: 0.3vw;
+    color: rgba(145, 170, 145);
+    text-align: center;
+}
+
+.title2 {
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
+    margin-top: 0px;
+    margin-bottom: 6vw;
+    font-size: 7vw;
+    letter-spacing: 0.7vw;
+    color: rgba(145, 170, 145);
+    text-align: center;
+}
+
 /* 청첩장 페이지 스타일 */
 .invitation-content {
     display: none;
@@ -171,7 +190,7 @@ html {
 /* 최상단 날짜 */
 .date-title {
     font-family: 'Bradley Hand', sans-serif;
-    margin-top: 20vw;
+    margin-top: 10vw;
     font-size: 7vw;
     font-weight: 400;
     font-style: normal;
@@ -208,6 +227,23 @@ html {
     font-family: 'Hakgyoansim Badasseugi', sans-serif;
     margin-top: 30vw;
     line-height: 1.6;
+}
+
+.wise-content .title1 {
+    font-family: 'Hoefler Italic', sans-serif;
+    margin-bottom: -3vw;
+    font-size: 3vw;
+    letter-spacing: 0.3vw;
+    color: rgba(145, 170, 145);
+}
+
+.wise-content .title2 {
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
+    margin-top: 0px;
+    margin-bottom: 4vw;
+    font-size: 7vw;
+    letter-spacing: 0.7vw;
+    color: rgba(145, 170, 145);
 }
 
 .wise-content h2 {
@@ -265,17 +301,8 @@ html {
     font-family: 'Hakgyoansim Badasseugi', sans-serif;
     text-align: center;
     /* 중앙 정렬 */
-    margin-top: 30vw;
+    margin-top: 15vw;
     /* 위쪽 간격 */
-}
-
-.calendar-container .title {
-    font-family: 'American Captain Condensed', sans-serif;
-    margin-top: 0px;
-    margin-bottom: 4vw;
-    font-size: 6vw;
-    letter-spacing: 0.7vw;
-    color: rgba(145, 170, 145);
 }
 
 .calendar-container .date {
@@ -396,14 +423,6 @@ html {
     margin-top: 30vw;
     margin-left: 2vw;
     margin-right: 2vw;
-}
-
-.gallery-container .title {
-    margin-bottom: 5vw;
-    font-size: 6vw;
-    letter-spacing: 0.7vw;
-    color: rgba(145, 170, 145);
-    text-align: center; /* 제목 중앙 정렬 */
 }
 
 .gallery-container .gallery {
@@ -550,17 +569,6 @@ html {
     font-family: 'Hakgyoansim Badasseugi', sans-serif;
     margin-top: 40vw;
     text-align: left;
-}
-
-/* LOCATION 타이틀 */
-.location-container .title {
-    font-family: 'American Captain Condensed', sans-serif; /* calendar-container title과 동일 */
-    margin-top: 0px;
-    margin-bottom: 4vw;
-    font-size: 6vw; /* 크기 조정 */
-    letter-spacing: 0.7vw;
-    color: rgba(145, 170, 145);
-    text-align: center; /* 중앙 정렬 */
 }
 
 /* LOCATION 전체 내용 스타일 */
@@ -721,16 +729,6 @@ html {
     padding: 4vw;
 }
 
-/* Title */
-.dining-container .title {
-    font-family: 'American Captain Condensed', sans-serif;
-    font-size: 6vw;
-    margin-bottom: 4vw;
-    letter-spacing: 0.7vw;
-    color: rgba(145, 170, 145);
-    text-align: center;
-}
-
 .dining-container .content {
     font-size: 4vw;
     line-height: 1.8;
@@ -796,15 +794,6 @@ html {
     font-family: 'Hakgyoansim Badasseugi', sans-serif;
     text-align: center;
     margin-top: 20vw;
-}
-
-.account-container .title {
-    font-family: 'American Captain Condensed', sans-serif;
-    font-size: 6vw;
-    margin-bottom: 4vw;
-    letter-spacing: 0.7vw;
-    color: rgba(145, 170, 145);
-    text-align: center;
 }
 
 /* Account section styles */
@@ -892,15 +881,6 @@ html {
     background-color: rgba(245, 245, 245, 0.8); /* 연한 배경 */
     border-radius: 2vw;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 살짝 입체감 추가 */
-}
-
-/* Title */
-.guestbook-container .title {
-    font-family: 'Hakgyoansim Badasseugi B', sans-serif;
-    font-size: 5.5vw;
-    letter-spacing: 0.5vw;
-    color: rgba(145, 170, 145);
-    margin-bottom: 4vw;
 }
 
 /* Guestbook Entries */
@@ -1207,6 +1187,13 @@ html {
 @font-face {
     font-family: 'Hakgyoansim Badasseugi B';
     src: url('font/Hakgyoansim Badasseugi/Hakgyoansim Badasseugi OTF B.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Hoefler Italic';
+    src: url('font/Hoefler/ufonts.com_hoefler-text-italic.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
