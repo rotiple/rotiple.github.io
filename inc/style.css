@@ -660,7 +660,8 @@ html {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-    width: 30vw
+    width: 30vw;
+    text-decoration: none;
 }
 
 .location-container .app-button img {
