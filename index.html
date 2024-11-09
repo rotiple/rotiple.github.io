@@ -243,47 +243,80 @@
         
                 infowindow.open(map, marker);
             </script>
-        
-            <!-- 어플 실행 버튼들 -->
-            <div class="app-buttons">
-                <button class="app-button naver-map">네이버지도</button>
-                <button class="app-button kakao-navi">카카오내비</button>
-                <button class="app-button tmap">티맵</button>
-            </div>
-        
-            <!-- 무료 셔틀 -->
-            <div class="shuttle-info">
+
+            <!-- 지하철 정보 -->
+            <div class="transport-section">
+                <div class="info-header">
+                    <img src="img/ico/subway.png" alt="지하철 아이콘" class="icon">
+                    <p class="section-title">지하철</p>
+                </div>
                 <div class="separator"></div>
-                <p class="section-title">무료 셔틀</p>
-                <p class="content">내용</p>
+                <p class="content">
+                    신반포역 4번 출구 도보 11분<br>
+                    ☆ 셔틀버스 운행 (10분 간격)<br><br>
+                    고속터미널역 5번 출구 도보 12분<br>
+                    ☆ 셔틀버스 미운행
+                </p>
             </div>
-        
-            <!-- 지하철 안내 -->
-            <div class="subway-info">
+
+            <!-- 버스 정보 -->
+            <div class="transport-section">
+                <div class="info-header">
+                    <img src="img/ico/bus.png" alt="버스 아이콘" class="icon">
+                    <p class="section-title">버스</p>
+                </div>
                 <div class="separator"></div>
-                <p class="section-title">지하철</p>
-                <p class="content">내용</p>
+                <p class="content">
+                    반포종합운동장(서초소방소 방면)<br>
+                    142, 서초10, 서초14<br><br>
+                    반포종합운동장(삼성래미안 방면)<br>
+                    142, 345, 3420, 서초10
+                </p>
             </div>
-        
-            <!-- 버스 안내 -->
-            <div class="bus-info">
+
+            <!-- 자가용 정보 -->
+            <div class="transport-section">
+                <div class="info-header">
+                    <img src="img/ico/car.png" alt="자가용 아이콘" class="icon">
+                    <p class="section-title">자가용</p>
+                </div>
                 <div class="separator"></div>
-                <p class="section-title">버스</p>
-                <p class="content">내용</p>
+                <p class="content">
+                    더 컨벤션 반포 검색<br><br>
+                    주소 : 서울 서초구 사평대로 108<br>
+                           서울 서초구 반포동 107-3<br><br>
+                    <strong>내비게이션</strong><br>
+                    원하시는 앱을 선택하시면 길안내가 시작됩니다.
+                </p>
+
+                <!-- 네비게이션 버튼 -->
+                <div class="app-buttons">
+                    <button class="app-button naver-map"><img src="img/ico/navermap.png" alt="네이버지도"> 네이버지도</button>
+                    <button class="app-button tmap"><img src="img/ico/tmap.png" alt="티맵">  티  맵</button>
+                    <button class="app-button kakao-navi"><img src="img/ico/kakaomap.png" alt="카카오지도"> 카카오지도</button>
+                </div>
             </div>
-        
-            <!-- 자가용 안내 -->
-            <div class="car-info">
+
+            <!-- 주차 정보 -->
+            <div class="transport-section">
+                <div class="info-header">
+                    <img src="img/ico/parking.png" alt="주차 아이콘" class="icon">
+                    <p class="section-title">주차안내</p>
+                </div>
                 <div class="separator"></div>
-                <p class="section-title">자가용</p>
-                <p class="content">내용</p>
-            </div>
-        
-            <!-- 주차 안내 -->
-            <div class="parking-info">
-                <div class="separator"></div>
-                <p class="section-title">주차안내</p>
-                <p class="content">내용</p>
+                <p class="content">
+                    건물 내 만차 시 외부주차장으로 주차해주세요.<br><br>
+                    <img src="img/ico/parking2.png" alt="주차 아이콘2" class="icon2">
+                    반포2동 공영주차장<br>
+                    ☆ 반포공영주차장 도보 14분<br><br>
+                    <img src="img/ico/parking2.png" alt="주차 아이콘2" class="icon2">
+                    서초구민 체육센터 주차장<br>
+                    ☆ 도보 12분 / 셔틀버스 미운행<br><br>
+                    ※ 주차장 협소하니 대중교통 이용 부탁드립니다.
+                </p>
+
+                <!-- 약도 이미지 보기 버튼 -->
+                <button class="map-image-button">약도 이미지 보기</button>
             </div>
         </div>
 

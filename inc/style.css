@@ -548,10 +548,8 @@ html {
 /* LOCATION */
 .location-container {
     font-family: 'Hakgyoansim Badasseugi', sans-serif;
-    text-align: center;
-    /* 중앙 정렬 */
     margin-top: 40vw;
-    /* 위쪽 간격 */
+    text-align: left;
 }
 
 /* LOCATION 타이틀 */
@@ -566,8 +564,7 @@ html {
 }
 
 /* LOCATION 전체 내용 스타일 */
-.location-container .address,
-.location-container .content {
+.location-container .address {
     font-size: 4vw;
     line-height: 1.6;
     color: rgb(33, 33, 33);
@@ -609,7 +606,37 @@ html {
 .map-container {
     width: 100vw;
     height: 60vw;
-    margin-bottom: 5vw;
+    margin-bottom: 10vw;
+}
+
+.transport-section {
+    margin-left : 10vw;
+    margin-right : 10vw;
+    margin-bottom: 10vw;
+}
+
+.info-header {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 아이콘과 제목 사이의 간격 */
+    padding-left: 1vw;
+}
+
+.transport-section .icon {
+    width: 10vw;
+    height: 10vw;
+}
+
+.transport-section .icon2 {
+    width: 3vw;
+    height: 3vw;
+}
+
+.location-container .content {
+    font-size: 4vw;
+    line-height: 1.6;
+    color: rgb(33, 33, 33);
+    padding-left: 1vw;
 }
 
 /* 어플 실행 버튼 스타일 */
@@ -621,18 +648,47 @@ html {
 }
 
 .location-container .app-button {
-    font-family: 'Hakgyoansim Badasseugi', sans-serif;
-    font-size: 3.5vw;
-    padding: 1vw 3vw;
+    font-family: 'Hakgyoansim Badasseugi B', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    font-size: 3vw;
+    padding: 2vw 2vw;
     background-color: rgba(145, 170, 145, 0.1);
-    border: 0.2vw solid rgba(145, 170, 145);
+    border: 1px solid rgba(145, 170, 145);
     color: rgba(145, 170, 145);
-    border-radius: 2vw;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    width: 30vw
+}
+
+.location-container .app-button img {
+    width: 5vw;
+    height: 5vw;
 }
 
 .location-container .app-button:hover {
+    background-color: rgba(145, 170, 145, 0.2);
+}
+
+/* 약도 이미지 버튼 스타일 */
+.location-container .map-image-button {
+    font-size: 14px;
+    padding: 10px 15px;
+    background-color: rgba(145, 170, 145, 0.1);
+    border: 1px solid rgba(145, 170, 145);
+    color: rgba(145, 170, 145);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    display: block;
+    margin: 10px auto;
+    width: 80vw;
+}
+
+.location-container .map-image-button:hover {
     background-color: rgba(145, 170, 145, 0.2);
 }
 
@@ -640,7 +696,8 @@ html {
 .location-container .separator {
     height: 1px;
     background-color: #ddd; /* 연한 회색 */
-    margin: 2vw 0;
+    margin-bottom: 2vw;
+    margin-top: 1vw;
 }
 
 /* Dining Guide Container */
