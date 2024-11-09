@@ -594,6 +594,7 @@ html {
 
 /* 주소 복사 버튼 스타일 */
 .location-container .copy-address-button {
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
     font-size: 4vw;
     background-color: rgba(145, 170, 145, 0.1);
     border: 0.2vw solid rgba(145, 170, 145);
@@ -693,8 +694,9 @@ html {
 }
 
 .location-container .map-image-button {
-    font-size: 14px;
-    padding: 10px 15px;
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
+    font-size: 4vw;
+    padding: 2vw;
     background-color: rgba(145, 170, 145, 0.1);
     border: 1px solid rgba(145, 170, 145);
     color: rgba(145, 170, 145);
@@ -853,6 +855,7 @@ html {
 
 /* 복사 버튼 스타일 */
 .account-container .copy-account-button {
+    font-family: 'Hakgyoansim Badasseugi', sans-serif;
     font-size: 3.5vw;
     background-color: rgba(145, 170, 145, 0.1);
     border: 0.2vw solid rgba(145, 170, 145);
