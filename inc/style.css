@@ -617,7 +617,7 @@ html {
 
 /* 지도 컨테이너 스타일 */
 .map-container {
-    width: 100%;
+    width: 100vw;
     height: 60vw;
     margin-bottom: 3vw;
 }
