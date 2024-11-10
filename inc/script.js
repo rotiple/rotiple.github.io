@@ -380,3 +380,18 @@ function kakaoMap(name,lat,lng){
 function naverMap(name,lat,lng){
     location.href = "http://app.map.naver.com/launchApp/?version=11&menu=navigation&elat="+lat+"&elng="+lng+"&etitle="+name;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('background-music');
+    const muteButton = document.getElementById('mute-button');
+
+    muteButton.addEventListener('click', () => {
+        if (audio.muted) {
+            audio.muted = false;
+            muteButton.textContent = '🔇'; // 음소거 아이콘
+        } else {
+            audio.muted = true;
+            muteButton.textContent = '🔊'; // 음소거 해제 아이콘
+        }
+    });
+});

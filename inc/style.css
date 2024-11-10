@@ -1161,6 +1161,27 @@ html {
     opacity: 1;
 }
 
+#mute-button {
+    position: fixed;
+    top: 3vw; /* 상단 여백 */
+    right: 3vw; /* 우측 여백 */
+    background: rgba(0, 0, 0, 0.1); /* 반투명 배경 */
+    color: white; /* 버튼 텍스트 색상 */
+    border: none;
+    padding: 2vw;
+    border-radius: 50%;
+    font-size: 4vw;
+    cursor: pointer;
+    opacity: 0.5; /* 연한 효과 */
+    transition: opacity 0.3s;
+    z-index: 99999;
+}
+
+#mute-button:hover {
+    opacity: 1; /* 호버 시 선명하게 */
+}
+
+
 
 /* Font */
 @font-face {
@@ -1205,7 +1226,6 @@ html {
     font-style: normal;
 }
 
-/* 애니메이션 */
 @keyframes fadeIn {
     0% {
         opacity: 0;

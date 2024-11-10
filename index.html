@@ -25,12 +25,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Sans+KR:wght@100..900&family=Single+Day&display=swap" rel="stylesheet">
 </head>
 <body>
+    <audio id="background-music" autoplay loop>
+        <source src="inc/bg.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <div class="animation-container" id="animationContainer">
         <div class="text" id="text1">
         </div>
     </div>
     
     <div class="invitation-content" id="invitationContent">
+        <button id="mute-button" aria-label="Mute/Unmute">🔇</button>
         <!-- 청첩장 페이지 -->
         <div class="date-title">2025. 2. 16</div>
         <div class="day-title">SUNDAY</div>
