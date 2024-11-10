@@ -27,7 +27,6 @@
 <body>
     <audio id="background-music" autoplay loop>
         <source src="inc/bg.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
     </audio>
 
     <div class="animation-container" id="animationContainer">
@@ -36,7 +35,9 @@
     </div>
     
     <div class="invitation-content" id="invitationContent">
-        <button id="mute-button" aria-label="Mute/Unmute">🔇</button>
+        <button id="mute-button" aria-label="Mute/Unmute">
+            <img src="img/mute.png" alt="음소거 아이콘" />
+        </button>
         <!-- 청첩장 페이지 -->
         <div class="date-title">2025. 2. 16</div>
         <div class="day-title">SUNDAY</div>
@@ -173,20 +174,20 @@
             <div class="title2">우리의 순간</div>
             <div class="gallery" id="gallery">
                 <!-- 초기에는 일부만 보이는 이미지 -->
-                <img src="img/gallery/1.webp" class="gallery-item">
-                <img src="img/gallery/2.webp" class="gallery-item">
-                <img src="img/gallery/3.webp" class="gallery-item">
-                <img src="img/gallery/4.webp" class="gallery-item">
-                <img src="img/gallery/5.webp" class="gallery-item">
-                <img src="img/gallery/1.webp" class="gallery-item">
-                <img src="img/gallery/2.webp" class="gallery-item">
-                <img src="img/gallery/3.webp" class="gallery-item">
-                <img src="img/gallery/4.webp" class="gallery-item">
+                <img src="1.webp" data-src="img/gallery/1.webp" class="gallery-item lazy-load">
+                <img src="2.webp" data-src="img/gallery/2.webp" class="gallery-item lazy-load">
+                <img src="3.webp" data-src="img/gallery/3.webp" class="gallery-item lazy-load">
+                <img src="4.webp" data-src="img/gallery/4.webp" class="gallery-item lazy-load">
+                <img src="5.webp" data-src="img/gallery/5.webp" class="gallery-item lazy-load">
+                <img src="1.webp" data-src="img/gallery/1.webp" class="gallery-item lazy-load">
+                <img src="2.webp" data-src="img/gallery/2.webp" class="gallery-item lazy-load">
+                <img src="3.webp" data-src="img/gallery/3.webp" class="gallery-item lazy-load">
+                <img src="4.webp" data-src="img/gallery/4.webp" class="gallery-item lazy-load">
                 
                 <!-- 나중에 더 보기 버튼을 클릭하면 보여질 이미지 -->
-                <img src="img/gallery/1.webp" class="gallery-item hidden">
-                <img src="img/gallery/2.webp" class="gallery-item hidden">
-                <img src="img/gallery/3.webp" class="gallery-item hidden">
+                <img src="1.webp" data-src="img/gallery/1.webp" class="gallery-item lazy-load hidden">
+                <img src="2.webp" data-src="img/gallery/2.webp" class="gallery-item lazy-load hidden">
+                <img src="3.webp" data-src="img/gallery/3.webp" class="gallery-item lazy-load hidden">
                 <!-- 필요에 따라 더 추가 -->
             </div>
             <div class="more-button" id="moreButton">사진 더 보기</div>
