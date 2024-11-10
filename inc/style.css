@@ -525,8 +525,8 @@ html {
 }
 
 .swiper-slide img {
-    margin-top: 100px;
     max-width: 100vw;
+    max-height: 90vh;
     object-fit: contain;
     box-shadow:0 0 5px #555;
 }
@@ -552,10 +552,10 @@ html {
     color: white !important; /* 버튼 색상 흰색으로 변경 */
     position: absolute;
     top: 50%; /* 세로 중앙 */
-    transform: translateY(-50%) scale(0.7);
+    transform: translateY(-50%) scale(0.4);
     z-index: 10;
     opacity: 0.8;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 기본 텍스트 그림자 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .swiper-button-next:hover,

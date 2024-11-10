@@ -158,13 +158,14 @@ document.addEventListener('DOMContentLoaded', () => {
         swiper = new Swiper('.swiper', {
             initialSlide: startIndex,
             loop: true,
+            autoHeight: true,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
             pagination: {
-                el: '.swiper-pagination',
-                dynamicBullets: true,
+                el: ".swiper-pagination",
+                type: "progressbar",
             },
             // centeredSlides: true,
             // zoom: true,
