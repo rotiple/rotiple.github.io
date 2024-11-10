@@ -389,31 +389,12 @@ document.addEventListener('DOMContentLoaded', () => {
     muteButton.addEventListener('click', () => {
         if (audio.muted) {
             audio.muted = false;
-            muteIcon.src = 'img/mute.png'; // 음소거 아이콘
-            muteIcon.alt = '음소거 아이콘';
+            muteIcon.src = 'img/sound.png'; // 음소거 아이콘
+            muteIcon.alt = '음소거 해제 아이콘';
         } else {
             audio.muted = true;
-            muteIcon.src = 'img/sound.png'; // 음소거 해제 아이콘
-            muteIcon.alt = '음소거 해제 아이콘';
+            muteIcon.src = 'img/mute.png'; // 음소거 해제 아이콘
+            muteIcon.alt = '음소거 아이콘';
         }
-    });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const lazyImages = document.querySelectorAll('.lazy-load');
-
-    const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src; // 실제 이미지 로드
-                img.classList.remove('lazy-load'); // 클래스 제거
-                observer.unobserve(img);
-            }
-        });
-    });
-
-    lazyImages.forEach(img => {
-        lazyLoadObserver.observe(img);
     });
 });
