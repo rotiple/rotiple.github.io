@@ -1199,7 +1199,7 @@ html {
 
 @font-face {
     font-family: 'Bradley Hand';
-    src: url('font/bradley-hand/BradleyHandITCTT-Bold.ttf') format('truetype');
+    src: url('font/bradley-hand/Bradley\ Hand\ ITC\ TT\ Bold.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
