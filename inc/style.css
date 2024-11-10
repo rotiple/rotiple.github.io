@@ -13,9 +13,10 @@ html {
     user-select: none;
 }
 
-@supports (-webkit-touch-callout: none) { 
-    height: -webkit-fill-available;
-  }
+#app-container { /* 최상위 컨테이너 */
+    height: 100vh; /* 뷰포트 높이 */
+    height: -webkit-fill-available; /* 사파리에서 뷰포트 높이 */
+}
 
 #introVideo {
     width: 100vw;
