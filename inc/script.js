@@ -112,7 +112,9 @@ document.querySelector('.dday-container .days').textContent = ddaysLeft;
 // gallery
 
 // 더보기 버튼 클릭 시 숨겨진 이미지 보이기
+const moreButton = document.querySelector("#moreButton");
 moreButton.addEventListener("click", () => {
+    event.preventDefault();
     document.querySelectorAll(".gallery-item.hidden").forEach(item => {
         item.classList.remove("hidden");
     });
@@ -129,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function openSwiperModal(index) {
         swiperModal.style.display = 'flex';
-
         if (!swiper) {
             initializeSwiper(index);
         } else {
@@ -139,6 +140,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function closeModal() {
         swiperModal.style.display = 'none';
+        if (swiper) {
+            swiper.destroy(true, true); // Swiper 제거
+            swiper = null; // 메모리 해제
+        }
     }
 
     function initializeSwiper(startIndex) {
@@ -151,6 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const img = document.createElement('img');
             img.src = item.src;
             img.alt = item.alt;
+            img.loading = 'lazy';
             slide.appendChild(img);
             swiperWrapper.appendChild(slide);
         });
@@ -171,9 +177,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // zoom: true,
             // spaceBetween: 30,
             effect: 'slide', // 여기서 효과를 선택 (slide, fade, cube, coverflow, flip)
-            fadeEffect: {
-                crossFade: true, // 페이드 효과에서 부드럽게 전환
-            },
+            // fadeEffect: {
+            //     crossFade: true, // 페이드 효과에서 부드럽게 전환
+            // },
         });
     }
 

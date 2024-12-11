@@ -443,10 +443,10 @@ html {
     will-change: transform, opacity;
 }
 
-.gallery-container .gallery-item:hover {
-    transform: scale(1.05); /* 확대 효과 */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 살짝 그림자 추가 */
-}
+/* .gallery-container .gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+} */
 
 .gallery-container .hidden {
     display: none; /* 기본적으로 숨겨진 상태 */
@@ -468,9 +468,9 @@ html {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.gallery-container .more-button:hover {
+/* .gallery-container .more-button:hover {
     background-color: rgba(108, 131, 108, 0.1);
-}
+} */
 
 .gallery-container .more-button::before {
     content: '\25BC'; /* 아래 화살표 */
@@ -529,6 +529,7 @@ html {
     max-height: 90vh;
     object-fit: contain;
     box-shadow:0 0 5px #555;
+    will-change: transform, opacity;
 }
 
 .close-swiper-modal {
@@ -558,10 +559,10 @@ html {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.swiper-button-next:hover,
+/* .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    opacity: 1; /* 호버 시 강조 */
-}
+    opacity: 1;
+} */
 
 /* 페이지네이션 위치 조정 */
 .swiper-pagination {
@@ -611,9 +612,9 @@ html {
     margin-bottom: 5vw;
 }
 
-.location-container .copy-address-button:hover {
+/* .location-container .copy-address-button:hover {
     background-color: rgba(108, 131, 108, 0.2);
-}
+} */
 
 /* 지도 컨테이너 스타일 */
 .map-container {
@@ -683,9 +684,9 @@ html {
     height: 5vw;
 }
 
-.location-container .app-button:hover {
+/* .location-container .app-button:hover {
     background-color: rgba(108, 131, 108, 0.2);
-}
+} */
 
 /* 약도 이미지 버튼 스타일 */
 .map-image-button-section {
@@ -709,9 +710,9 @@ html {
     width: 25vw;
 }
 
-.location-container .map-image-button:hover {
+/* .location-container .map-image-button:hover {
     background-color: rgba(108, 131, 108, 0.2);
-}
+} */
 
 .map-image {
     width: 100%;
@@ -868,9 +869,9 @@ html {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.account-container .copy-account-button:hover {
+/* .account-container .copy-account-button:hover {
     background-color: rgba(108, 131, 108, 0.2);
-}
+} */
 
 /* Separator */
 .account-container .separator {
@@ -939,9 +940,9 @@ html {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.guestbook-entry .entry-buttons button:hover {
-    background-color: rgba(108, 131, 108, 0.1); /* hover 시 조금 더 강조 */
-}
+/* .guestbook-entry .entry-buttons button:hover {
+    background-color: rgba(108, 131, 108, 0.1);
+} */
 
 /* 모달 입력 스타일 */
 .modal-content input,
@@ -964,9 +965,9 @@ html {
     transition: background-color 0.3s;
 }
 
-.modal-content .submit-button:hover {
+/* .modal-content .submit-button:hover {
     background-color: rgba(108, 131, 108, 1);
-}
+} */
 
 
 /* Add Message Button */
@@ -984,9 +985,9 @@ html {
     width: 70vw;
 }
 
-.add-message-button:hover {
+/* .add-message-button:hover {
     background-color: rgba(108, 131, 108, 0.2);
-}
+} */
 
 /* Modal */
 .modal {
@@ -1059,9 +1060,9 @@ html {
     transition: background-color 0.3s;
 }
 
-.modal-content .submit-button:hover {
+/* .modal-content .submit-button:hover {
     background-color: rgba(108, 131, 108, 1);
-}
+} */
 
 /* 모달 닫기 버튼 */
 .modal-content .close-button {
@@ -1077,9 +1078,9 @@ html {
     transition: color 0.3s ease;
 }
 
-.modal-content .close-button:hover {
-    color: #555; /* hover 시 색상 변경 */
-}
+/* .modal-content .close-button:hover {
+    color: #555;
+} */
 
 
 /* Footer */
