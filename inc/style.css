@@ -9,7 +9,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('../img/ani-bg.jpg');
+    background-image: url('../img/ani-bg.webp');
     overflow: auto;
     user-select: none;
 }
