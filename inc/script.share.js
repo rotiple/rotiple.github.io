@@ -97,5 +97,5 @@ function showToast(message) {
 
 // Base64 인코딩된 메시지
 function encodeBase64(str) {
-    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (_, p1) => String.fromCharCode('0x' + p1)));
+    return encodeURIComponent(btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, (_, p1) => String.fromCharCode('0x' + p1))));
 }
