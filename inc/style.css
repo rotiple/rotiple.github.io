@@ -1207,14 +1207,14 @@ html {
 
 @font-face {
     font-family: 'Hakgyoansim Badasseugi';
-    src: url('font/Hakgyoansim Badasseugi/Hakgyoansim Badasseugi OTF L.otf') format('truetype');
+    src: url('font/Hakgyoansim Badasseugi/Hakgyoansim Badasseugi OTF L.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Hakgyoansim Badasseugi B';
-    src: url('font/Hakgyoansim Badasseugi/Hakgyoansim Badasseugi OTF B.otf') format('truetype');
+    src: url('font/Hakgyoansim Badasseugi/Hakgyoansim Badasseugi OTF B.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -1222,6 +1222,13 @@ html {
 @font-face {
     font-family: 'Hoefler Italic';
     src: url('font/Hoefler/ufonts.com_hoefler-text-italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Una';
+    src: url('font/Una/una\ OTF\ Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

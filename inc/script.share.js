@@ -2,13 +2,15 @@ rurl = "https://장형석남채린결혼합니다.메인.한국"
 
 document.addEventListener('DOMContentLoaded', () => {
     const cases = {
-        1: '저희 잘 살겠습니다!\n키워주셔서 감사합니다!',
+        1: '\n저희 잘 살겠습니다!\n키워주셔서 감사합니다!',
         2: '\n나 장가간다!',
         3: '\n나 시집간다!',
         4: '\n저 장가가요!',
         5: '\n저 시집가요!',
         6: '\n저희 결혼합니다!',
-        7: ''
+        7: '\n우리 아들 장가간다!',
+        8: '\n우리 딸 시집간다!',
+        9: ''
     };
 
     const messagePreview = document.getElementById('messagePreview');

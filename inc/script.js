@@ -23,37 +23,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const animationContainer = document.getElementById('text1');
 
     if (name && type) {
-        fontFamily = "'Hakgyoansim Badasseugi B', sans-serif";
+        fontFamily = "Una";
         letterSpacing = "0.1em";
         delay = 0.2;
         switch (type) {
             case '1':
-                message = `${name} 저희 잘 살겠습니다!\n키워주셔서 감사합니다!`;
-                fontSize = "8vw";
+                message = `${name}\n저희 잘 살겠습니다!\n키워주셔서 감사합니다!`;
+                fontSize = "12vw";
                 break;
             case '2':
                 message = `${name}\n나 장가간다!`;
-                fontSize = "10vw";
+                fontSize = "14vw";
                 break;
             case '3':
                 message = `${name}\n나 시집간다!`;
-                fontSize = "10vw";
+                fontSize = "14vw";
                 break;
 			case '4':
 				message = `${name}\n저 장가가요!`;
-				fontSize = "10vw";
+				fontSize = "14vw";
 				break;
 			case '5':
 				message = `${name}\n저 시집가요!`;
-				fontSize = "10vw";
+				fontSize = "14vw";
 				break;
             case '6':
                 message = `${name}\n저희 결혼합니다!`;
-                fontSize = "9vw";
+                fontSize = "13vw";
                 break;
             case '7':
+                message = `${name}\n우리 아들 장가간다!`;
+                fontSize = "13vw";
+                break;
+            case '8':
+                message = `${name}\n우리 딸 시집간다!`;
+                fontSize = "13vw";
+                break;
+            case '9':
                 message = `${name}`;
-                fontSize = "9vw";
+                fontSize = "13vw";
                 break;
             default:
                 message = "WEDDING";
@@ -134,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!swiper) {
             initializeSwiper(index);
         } else {
-            swiper.slideTo(index, 0);
+            swiper.slideTo(index, 0); 
         }
     }
 
